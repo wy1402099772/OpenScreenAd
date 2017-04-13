@@ -13,6 +13,11 @@
 		9371ABE11E9F502C0091CEFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9371ABDF1E9F502C0091CEFF /* Main.storyboard */; };
 		9371ABE31E9F502C0091CEFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9371ABE21E9F502C0091CEFF /* Assets.xcassets */; };
 		9371ABE61E9F502C0091CEFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9371ABE41E9F502C0091CEFF /* LaunchScreen.storyboard */; };
+		9371ABF01E9F51350091CEFF /* OpenScreenAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABEF1E9F51350091CEFF /* OpenScreenAdViewController.m */; };
+		9371ABF41E9F51A60091CEFF /* OpenScreenAdSkipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABF31E9F51A60091CEFF /* OpenScreenAdSkipButton.m */; };
+		9371ABF71E9F57960091CEFF /* OpenScreenAdCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABF61E9F57960091CEFF /* OpenScreenAdCircleView.m */; };
+		9371ABFB1E9F60170091CEFF /* OpenScreenAdParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABFA1E9F60170091CEFF /* OpenScreenAdParameters.m */; };
+		9371ABFD1E9F63CD0091CEFF /* IMG_0713.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 9371ABFC1E9F63CD0091CEFF /* IMG_0713.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,15 @@
 		9371ABE21E9F502C0091CEFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9371ABE51E9F502C0091CEFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9371ABE71E9F502C0091CEFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9371ABEE1E9F51350091CEFF /* OpenScreenAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdViewController.h; sourceTree = "<group>"; };
+		9371ABEF1E9F51350091CEFF /* OpenScreenAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdViewController.m; sourceTree = "<group>"; };
+		9371ABF21E9F51A60091CEFF /* OpenScreenAdSkipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdSkipButton.h; sourceTree = "<group>"; };
+		9371ABF31E9F51A60091CEFF /* OpenScreenAdSkipButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdSkipButton.m; sourceTree = "<group>"; };
+		9371ABF51E9F57960091CEFF /* OpenScreenAdCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdCircleView.h; sourceTree = "<group>"; };
+		9371ABF61E9F57960091CEFF /* OpenScreenAdCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdCircleView.m; sourceTree = "<group>"; };
+		9371ABF91E9F60170091CEFF /* OpenScreenAdParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdParameters.h; sourceTree = "<group>"; };
+		9371ABFA1E9F60170091CEFF /* OpenScreenAdParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdParameters.m; sourceTree = "<group>"; };
+		9371ABFC1E9F63CD0091CEFF /* IMG_0713.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0713.PNG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +72,12 @@
 		9371ABD51E9F502C0091CEFF /* OpenScreenAd */ = {
 			isa = PBXGroup;
 			children = (
+				9371ABED1E9F51240091CEFF /* OpenScreenAd */,
 				9371ABD91E9F502C0091CEFF /* AppDelegate.h */,
 				9371ABDA1E9F502C0091CEFF /* AppDelegate.m */,
 				9371ABDC1E9F502C0091CEFF /* ViewController.h */,
 				9371ABDD1E9F502C0091CEFF /* ViewController.m */,
+				9371ABFC1E9F63CD0091CEFF /* IMG_0713.PNG */,
 				9371ABDF1E9F502C0091CEFF /* Main.storyboard */,
 				9371ABE21E9F502C0091CEFF /* Assets.xcassets */,
 				9371ABE41E9F502C0091CEFF /* LaunchScreen.storyboard */,
@@ -77,6 +93,29 @@
 				9371ABD71E9F502C0091CEFF /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9371ABED1E9F51240091CEFF /* OpenScreenAd */ = {
+			isa = PBXGroup;
+			children = (
+				9371ABF11E9F51990091CEFF /* View */,
+				9371ABEE1E9F51350091CEFF /* OpenScreenAdViewController.h */,
+				9371ABEF1E9F51350091CEFF /* OpenScreenAdViewController.m */,
+				9371ABF91E9F60170091CEFF /* OpenScreenAdParameters.h */,
+				9371ABFA1E9F60170091CEFF /* OpenScreenAdParameters.m */,
+			);
+			path = OpenScreenAd;
+			sourceTree = "<group>";
+		};
+		9371ABF11E9F51990091CEFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9371ABF51E9F57960091CEFF /* OpenScreenAdCircleView.h */,
+				9371ABF61E9F57960091CEFF /* OpenScreenAdCircleView.m */,
+				9371ABF21E9F51A60091CEFF /* OpenScreenAdSkipButton.h */,
+				9371ABF31E9F51A60091CEFF /* OpenScreenAdSkipButton.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +178,7 @@
 			files = (
 				9371ABE61E9F502C0091CEFF /* LaunchScreen.storyboard in Resources */,
 				9371ABE31E9F502C0091CEFF /* Assets.xcassets in Resources */,
+				9371ABFD1E9F63CD0091CEFF /* IMG_0713.PNG in Resources */,
 				9371ABE11E9F502C0091CEFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +191,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9371ABDE1E9F502C0091CEFF /* ViewController.m in Sources */,
+				9371ABFB1E9F60170091CEFF /* OpenScreenAdParameters.m in Sources */,
+				9371ABF01E9F51350091CEFF /* OpenScreenAdViewController.m in Sources */,
+				9371ABF41E9F51A60091CEFF /* OpenScreenAdSkipButton.m in Sources */,
+				9371ABF71E9F57960091CEFF /* OpenScreenAdCircleView.m in Sources */,
 				9371ABDB1E9F502C0091CEFF /* AppDelegate.m in Sources */,
 				9371ABD81E9F502C0091CEFF /* main.m in Sources */,
 			);
