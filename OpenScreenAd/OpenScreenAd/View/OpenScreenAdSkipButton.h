@@ -12,9 +12,17 @@
 
 - (void)userDidSelectOpenScreenSkipButton:(NSUInteger)countdown;
 
+- (void)openScreenSkipButtonDidCompleteCountdown;
+- (void)openScreenSkipButtonSkipEnaled;
+
 @end
 
 @interface OpenScreenAdSkipButton : UIView
+
+- (void)startCountdown;
+
+@property (nonatomic, assign) NSUInteger allowSkipSecond;
+@property (nonatomic, assign) NSUInteger totalSecond;
 
 @property (nonatomic, strong) id<OpenScreenAdSkipButtonDelegate> delegate;
 

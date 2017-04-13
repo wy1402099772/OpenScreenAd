@@ -10,8 +10,6 @@
 
 @protocol OpenScreenAdViewControllerDelegate <NSObject>
 
-- (BOOL)shouldOpenScreenAdSkipWithCountdown:(NSUInteger)countdown;
-
 - (void)openScreenAdDidClickSkipAndWillDismiss;
 - (void)openScreenAdDidClickSkipAndDidDismiss;
 

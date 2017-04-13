@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) OpenScreenAdSkipButton *skipButton;
 @property (nonatomic, strong) UIImageView *bgImageView;
+@property (nonatomic, strong) UILabel *tipLabel;
 
 @end
 
@@ -31,6 +32,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.skipButton startCountdown];
+}
+
 
 #pragma mark - Private
 - (void)configureView {
@@ -38,6 +45,7 @@
     
     [self.view addSubview:self.bgImageView];
     [self.view addSubview:self.skipButton];
+    [self.view addSubview:self.tipLabel];
 }
 
 - (void)executeDismiss {
@@ -61,6 +69,26 @@
     [self executeDismiss];
 }
 
+- (void)openScreenSkipButtonDidCompleteCountdown {
+    [self executeDismiss];
+}
+
+- (void)openScreenSkipButtonSkipEnaled {
+//    self.tipLabel.hidden = NO;
+}
+
+
+#pragma mark - Setter
+- (void)setAllowSkipSecond:(NSUInteger)allowSkipSecond {
+    _allowSkipSecond = allowSkipSecond;
+    self.skipButton.allowSkipSecond = allowSkipSecond;
+}
+
+- (void)setTotalSecond:(NSUInteger)totalSecond {
+    _totalSecond = totalSecond;
+    self.skipButton.totalSecond = totalSecond;
+}
+
 
 #pragma mark - Getter
 - (OpenScreenAdSkipButton *)skipButton {
@@ -73,10 +101,22 @@
 
 - (UIImageView *)bgImageView {
     if(!_bgImageView) {
-        _bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"IMG_0713"]];
+        _bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default"]];
         [_bgImageView setFrame:self.view.frame];
     }
     return _bgImageView;
+}
+
+- (UILabel *)tipLabel {
+    if(!_tipLabel) {
+        _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, OSA_SCREEN_HEIGHT - 50, OSA_SCREEN_WIDTH, 30)];
+        _tipLabel.text = @"Click Skip Button";
+        _tipLabel.textAlignment = NSTextAlignmentCenter;
+        _tipLabel.font = [UIFont systemFontOfSize:20];
+        _tipLabel.textColor = [UIColor redColor];
+        _tipLabel.hidden = YES;
+    }
+    return _tipLabel;
 }
 
 @end
