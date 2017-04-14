@@ -46,6 +46,7 @@
 		9371ACBF1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */; };
 		9371ACC11EA0D94E0091CEFF /* OpenScreenAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9371ACC01EA0D94E0091CEFF /* OpenScreenAd.bundle */; };
 		9371AD041EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */; };
+		9371AD071EA0FA6E0091CEFF /* OpenScreenAdGoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AD061EA0FA6E0091CEFF /* OpenScreenAdGoView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,8 @@
 		9371ACC01EA0D94E0091CEFF /* OpenScreenAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = OpenScreenAd.bundle; sourceTree = "<group>"; };
 		9371AD021EA0F5240091CEFF /* OpenScreenAdEmitterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdEmitterLayer.h; sourceTree = "<group>"; };
 		9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdEmitterLayer.m; sourceTree = "<group>"; };
+		9371AD051EA0FA6E0091CEFF /* OpenScreenAdGoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdGoView.h; sourceTree = "<group>"; };
+		9371AD061EA0FA6E0091CEFF /* OpenScreenAdGoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdGoView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 				9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */,
 				9371AD021EA0F5240091CEFF /* OpenScreenAdEmitterLayer.h */,
 				9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */,
+				9371AD051EA0FA6E0091CEFF /* OpenScreenAdGoView.h */,
+				9371AD061EA0FA6E0091CEFF /* OpenScreenAdGoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				9371ACBC1EA0C0C80091CEFF /* ViewController+MASAdditions.m in Sources */,
 				9371ACB41EA0C0C80091CEFF /* MASConstraint.m in Sources */,
 				9371ABF41E9F51A60091CEFF /* OpenScreenAdSkipButton.m in Sources */,
+				9371AD071EA0FA6E0091CEFF /* OpenScreenAdGoView.m in Sources */,
 				9371ABF71E9F57960091CEFF /* OpenScreenAdCircleView.m in Sources */,
 				9371ACB91EA0C0C80091CEFF /* NSArray+MASAdditions.m in Sources */,
 				9371ACBA1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,

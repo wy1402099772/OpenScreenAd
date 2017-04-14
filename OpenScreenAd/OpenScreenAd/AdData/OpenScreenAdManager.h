@@ -25,6 +25,8 @@
 
 - (MVCampaign *)getMVCampaign;
 
+- (void)registerViewForInteraction:(UIView *)view withCampaign:(MVCampaign *)campaign;
+
 
 @property (nonatomic, weak) id<OpenScreenAdManagerDelegate> delegate;
 

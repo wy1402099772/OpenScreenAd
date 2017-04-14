@@ -10,6 +10,7 @@
 #import "OpenScreenAdParameters.h"
 #import <MVSDK/MVSDK.h>
 #import "Masonry.h"
+#import "OpenScreenAdGoView.h"
 
 @interface OpenScreenAdMVAdView ()
 
@@ -19,6 +20,7 @@
 @property (nonatomic, strong) UILabel       *displayAppNameLabel;
 @property (nonatomic, strong) UILabel       *displayAppDesclabel;
 @property (nonatomic, strong) UILabel       *adLabel;
+@property (nonatomic, strong) OpenScreenAdGoView *goView;
 
 @property (nonatomic, strong) MVCampaign    *campaign;
 
@@ -83,6 +85,9 @@
         make.left.equalTo(self).offset(OSA_SCREENAPPLYSPACE(23));
         make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(34));
     }];
+    
+    [self addSubview:self.goView];
+    [self.goView startFlashAnimation];
 }
 
 
@@ -157,6 +162,13 @@
         _adLabel.alpha = 0.4;
     }
     return _adLabel;
+}
+
+- (OpenScreenAdGoView *)goView {
+    if(!_goView) {
+        _goView = [[OpenScreenAdGoView alloc] initWithFrame:CGRectMake(0, OSA_SCREEN_HEIGHT - OSA_SCREENAPPLYHEIGHT(60), OSA_SCREEN_WIDTH, OSA_SCREENAPPLYHEIGHT(60))];
+    }
+    return _goView;
 }
 
 @end

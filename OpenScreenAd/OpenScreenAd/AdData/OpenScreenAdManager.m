@@ -46,6 +46,9 @@
     return campaign;
 }
 
+- (void)registerViewForInteraction:(UIView *)view withCampaign:(MVCampaign *)campaign {
+    [self.mvUnit registerViewForInteraction:view withCampaign:campaign];
+}
 
 #pragma mark - OpenScreenMobVistaUnitDelegate
 - (void)openScreenMobvistaUnitDidGetAd {

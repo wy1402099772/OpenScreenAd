@@ -121,6 +121,8 @@
         }];
         [self.view bringSubviewToFront:self.skipButton];
     }
+    
+    [self.dataManager registerViewForInteraction:self.mvAdView withCampaign:[self.dataManager getMVCampaign]];
 }
 
 
