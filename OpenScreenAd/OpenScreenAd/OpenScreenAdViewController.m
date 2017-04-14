@@ -21,6 +21,7 @@
 @property (nonatomic, strong) UILabel *tipLabel;
 @property (nonatomic, strong) UIView *emitView;
 @property (nonatomic, strong) OpenScreenAdEmitterLayer *emitLayer;
+@property (nonatomic, strong) UIActivityIndicatorView *indicator;
 
 @property (nonatomic, strong) OpenScreenAdManager *dataManager;
 
@@ -53,6 +54,7 @@
     [super viewDidAppear:animated];
     
     [self.skipButton startCountdown];
+    [self.indicator startAnimating];
 }
 
 
@@ -71,9 +73,24 @@
     
     [self.view addSubview:self.bgImageView];
     [self.view addSubview:self.skipButton];
-    [self.view addSubview:self.tipLabel];
     
     [self.view addSubview:self.emitView];
+    
+    [self.view addSubview:self.indicator];
+    [self.indicator mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(OSA_SCREENAPPLYHEIGHT(227));
+        make.centerX.equalTo(self.view);
+        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(24));
+        make.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(24));
+    }];
+    
+    [self.view addSubview:self.tipLabel];
+    [self.tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.indicator.mas_bottom).offset(OSA_SCREENAPPLYHEIGHT(11));
+        make.centerX.equalTo(self);
+        make.left.equalTo(self).offset(OSA_SCREENAPPLYSPACE(23));
+        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(17));
+    }];
 }
 
 - (void)executeDismiss {
@@ -112,6 +129,8 @@
 
 #pragma mark - OpenScreenAdManagerDelegate
 - (void)openScreenMVAdDidReach {
+    [self.indicator stopAnimating];
+    
     [self.emitLayer addToSubView:self.view];
     
     if(self.mvAdView.superview == nil) {
@@ -121,6 +140,7 @@
         }];
         [self.view bringSubviewToFront:self.skipButton];
     }
+    
     
     [self.dataManager registerViewForInteraction:self.mvAdView withCampaign:[self.dataManager getMVCampaign]];
 }
@@ -160,12 +180,11 @@
 
 - (UILabel *)tipLabel {
     if(!_tipLabel) {
-        _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, OSA_SCREEN_HEIGHT - 50, OSA_SCREEN_WIDTH, 30)];
-        _tipLabel.text = @"Click Skip Button";
+        _tipLabel = [[UILabel alloc] init];
+        _tipLabel.text = @"Loading...";
         _tipLabel.textAlignment = NSTextAlignmentCenter;
-        _tipLabel.font = [UIFont systemFontOfSize:20];
-        _tipLabel.textColor = [UIColor redColor];
-        _tipLabel.hidden = YES;
+        _tipLabel.font = [UIFont systemFontOfSize:12];
+        _tipLabel.textColor = [UIColor whiteColor];
     }
     return _tipLabel;
 }
@@ -197,6 +216,15 @@
         _emitLayer = [[OpenScreenAdEmitterLayer alloc] initWithLayerFrame:self.emitView.bounds andLayerCenterPoint:self.emitView.center andLayerSize:self.emitView.bounds.size andImage:[UIImage imageWithContentsOfFile:[OSA_RESOUCE_BUNDLE pathForResource:@"image_shine_cell@3x" ofType:@"png"]]];
      }
     return _emitLayer;
+}
+
+- (UIActivityIndicatorView *)indicator {
+    if (!_indicator) {
+        _indicator = [[UIActivityIndicatorView alloc] init];
+        _indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    }
+    
+    return _indicator;
 }
 
 @end
