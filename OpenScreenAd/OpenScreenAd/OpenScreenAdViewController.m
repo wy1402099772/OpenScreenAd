@@ -12,12 +12,15 @@
 #import "OpenScreenAdManager.h"
 #import "OpenScreenAdMVAdView.h"
 #import "Masonry.h"
+#import "OpenScreenAdEmitterLayer.h"
 
 @interface OpenScreenAdViewController () <OpenScreenAdSkipButtonDelegate, OpenScreenAdManagerDelegate>
 
 @property (nonatomic, strong) OpenScreenAdSkipButton *skipButton;
 @property (nonatomic, strong) UIImageView *bgImageView;
 @property (nonatomic, strong) UILabel *tipLabel;
+@property (nonatomic, strong) UIView *emitView;
+@property (nonatomic, strong) OpenScreenAdEmitterLayer *emitLayer;
 
 @property (nonatomic, strong) OpenScreenAdManager *dataManager;
 
@@ -69,6 +72,8 @@
     [self.view addSubview:self.bgImageView];
     [self.view addSubview:self.skipButton];
     [self.view addSubview:self.tipLabel];
+    
+    [self.view addSubview:self.emitView];
 }
 
 - (void)executeDismiss {
@@ -107,6 +112,8 @@
 
 #pragma mark - OpenScreenAdManagerDelegate
 - (void)openScreenMVAdDidReach {
+    [self.emitLayer addToSubView:self.view];
+    
     if(self.mvAdView.superview == nil) {
         [self.view addSubview:self.mvAdView];
         [self.mvAdView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -132,7 +139,7 @@
 #pragma mark - Getter
 - (OpenScreenAdSkipButton *)skipButton {
     if(!_skipButton) {
-        _skipButton = [[OpenScreenAdSkipButton alloc] initWithFrame:CGRectMake(OSA_SCREEN_WIDTH - kOSASkipButtonSize - 15, 15, kOSASkipButtonSize, kOSASkipButtonSize)];
+        _skipButton = [[OpenScreenAdSkipButton alloc] initWithFrame:CGRectMake(OSA_SCREEN_WIDTH - kOSASkipButtonSize - 25, 25, kOSASkipButtonSize, kOSASkipButtonSize)];
         _skipButton.delegate = self;
     }
     return _skipButton;
@@ -140,8 +147,11 @@
 
 - (UIImageView *)bgImageView {
     if(!_bgImageView) {
-        _bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default"]];
+        _bgImageView = [[UIImageView alloc] init];
+        UIImage *image = [UIImage imageWithContentsOfFile:[OSA_RESOUCE_BUNDLE pathForResource:@"image_flash_ad_bg@3x" ofType:@"png"]];
+        _bgImageView.image = image;
         [_bgImageView setFrame:self.view.frame];
+        _bgImageView.contentMode = UIViewContentModeScaleAspectFill;
     }
     return _bgImageView;
 }
@@ -171,6 +181,20 @@
         _mvAdView = [[OpenScreenAdMVAdView alloc] initWithMVCampaign:[self.dataManager getMVCampaign]];
     }
     return _mvAdView;
+}
+
+- (UIView *)emitView {
+    if(!_emitView) {
+        _emitView = [[UIView alloc] initWithFrame:CGRectMake(0, OSA_SCREENAPPLYHEIGHT(125), OSA_SCREEN_WIDTH, OSA_SCREENAPPLYHEIGHT(225))];
+    }
+    return _emitView;
+}
+
+- (OpenScreenAdEmitterLayer *)emitLayer {
+    if(!_emitLayer) {
+        _emitLayer = [[OpenScreenAdEmitterLayer alloc] initWithLayerFrame:self.emitView.bounds andLayerCenterPoint:self.emitView.center andLayerSize:self.emitView.bounds.size andImage:[UIImage imageWithContentsOfFile:[OSA_RESOUCE_BUNDLE pathForResource:@"image_shine_cell@3x" ofType:@"png"]]];
+     }
+    return _emitLayer;
 }
 
 @end

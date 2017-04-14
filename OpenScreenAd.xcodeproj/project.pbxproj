@@ -17,7 +17,6 @@
 		9371ABF41E9F51A60091CEFF /* OpenScreenAdSkipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABF31E9F51A60091CEFF /* OpenScreenAdSkipButton.m */; };
 		9371ABF71E9F57960091CEFF /* OpenScreenAdCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABF61E9F57960091CEFF /* OpenScreenAdCircleView.m */; };
 		9371ABFB1E9F60170091CEFF /* OpenScreenAdParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABFA1E9F60170091CEFF /* OpenScreenAdParameters.m */; };
-		9371AC071E9F898E0091CEFF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9371AC061E9F898E0091CEFF /* Default@2x.png */; };
 		9371AC101EA074940091CEFF /* OpenScreenAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AC0F1EA074940091CEFF /* OpenScreenAdManager.m */; };
 		9371AC7B1EA0AC110091CEFF /* MVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC781EA0AC110091CEFF /* MVSDK.framework */; };
 		9371AC7C1EA0AC110091CEFF /* MVSDKAppWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC791EA0AC110091CEFF /* MVSDKAppWall.framework */; };
@@ -45,6 +44,8 @@
 		9371ACBB1EA0C0C80091CEFF /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACAE1EA0C0C80091CEFF /* View+MASAdditions.m */; };
 		9371ACBC1EA0C0C80091CEFF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACB11EA0C0C80091CEFF /* ViewController+MASAdditions.m */; };
 		9371ACBF1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */; };
+		9371ACC11EA0D94E0091CEFF /* OpenScreenAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9371ACC01EA0D94E0091CEFF /* OpenScreenAd.bundle */; };
+		9371AD041EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +67,6 @@
 		9371ABF61E9F57960091CEFF /* OpenScreenAdCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdCircleView.m; sourceTree = "<group>"; };
 		9371ABF91E9F60170091CEFF /* OpenScreenAdParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdParameters.h; sourceTree = "<group>"; };
 		9371ABFA1E9F60170091CEFF /* OpenScreenAdParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdParameters.m; sourceTree = "<group>"; };
-		9371AC061E9F898E0091CEFF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9371AC0E1EA074940091CEFF /* OpenScreenAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdManager.h; sourceTree = "<group>"; };
 		9371AC0F1EA074940091CEFF /* OpenScreenAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdManager.m; sourceTree = "<group>"; };
 		9371AC781EA0AC110091CEFF /* MVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MVSDK.framework; sourceTree = "<group>"; };
@@ -113,6 +113,9 @@
 		9371ACB11EA0C0C80091CEFF /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		9371ACBD1EA0C3D20091CEFF /* OpenScreenAdMVAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdMVAdView.h; sourceTree = "<group>"; };
 		9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdMVAdView.m; sourceTree = "<group>"; };
+		9371ACC01EA0D94E0091CEFF /* OpenScreenAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = OpenScreenAd.bundle; sourceTree = "<group>"; };
+		9371AD021EA0F5240091CEFF /* OpenScreenAdEmitterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdEmitterLayer.h; sourceTree = "<group>"; };
+		9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdEmitterLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +169,6 @@
 				9371ABDA1E9F502C0091CEFF /* AppDelegate.m */,
 				9371ABDC1E9F502C0091CEFF /* ViewController.h */,
 				9371ABDD1E9F502C0091CEFF /* ViewController.m */,
-				9371AC061E9F898E0091CEFF /* Default@2x.png */,
 				9371ABDF1E9F502C0091CEFF /* Main.storyboard */,
 				9371ABE21E9F502C0091CEFF /* Assets.xcassets */,
 				9371ABE41E9F502C0091CEFF /* LaunchScreen.storyboard */,
@@ -188,6 +190,7 @@
 		9371ABED1E9F51240091CEFF /* OpenScreenAd */ = {
 			isa = PBXGroup;
 			children = (
+				9371ACC01EA0D94E0091CEFF /* OpenScreenAd.bundle */,
 				9371AC0D1EA074740091CEFF /* AdData */,
 				9371ABF11E9F51990091CEFF /* View */,
 				9371ABEE1E9F51350091CEFF /* OpenScreenAdViewController.h */,
@@ -207,6 +210,8 @@
 				9371ABF31E9F51A60091CEFF /* OpenScreenAdSkipButton.m */,
 				9371ACBD1EA0C3D20091CEFF /* OpenScreenAdMVAdView.h */,
 				9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */,
+				9371AD021EA0F5240091CEFF /* OpenScreenAdEmitterLayer.h */,
+				9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,9 +346,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9371ACC11EA0D94E0091CEFF /* OpenScreenAd.bundle in Resources */,
 				9371ABE61E9F502C0091CEFF /* LaunchScreen.storyboard in Resources */,
 				9371ABE31E9F502C0091CEFF /* Assets.xcassets in Resources */,
-				9371AC071E9F898E0091CEFF /* Default@2x.png in Resources */,
 				9371ACB21EA0C0C80091CEFF /* Info.plist in Resources */,
 				9371ABE11E9F502C0091CEFF /* Main.storyboard in Resources */,
 			);
@@ -357,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9371ACB81EA0C0C80091CEFF /* MASViewConstraint.m in Sources */,
+				9371AD041EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m in Sources */,
 				9371ABDE1E9F502C0091CEFF /* ViewController.m in Sources */,
 				9371ACB71EA0C0C80091CEFF /* MASViewAttribute.m in Sources */,
 				9371ABFB1E9F60170091CEFF /* OpenScreenAdParameters.m in Sources */,

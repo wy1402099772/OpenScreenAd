@@ -87,7 +87,7 @@
 
 - (void)triggleUIRefresh {
     NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] - self.logInterval;
-    BOOL isCurrentSkipEnabled = interval > self.allowSkipSecond;
+    BOOL isCurrentSkipEnabled = interval > self.totalSecond - self.allowSkipSecond;
     if(interval > self.totalSecond) {
         [self didRunOutCutDown];
     } else if (!self.isSkipEnabled && isCurrentSkipEnabled) {
@@ -97,7 +97,7 @@
     self.actionButton.enabled = self.isSkipEnabled;
     
     if(!self.isSkipEnabled) {
-        [self.actionButton setTitle:@(self.totalSecond - (int)interval).stringValue forState:UIControlStateNormal];
+        [self.actionButton setTitle:[NSString stringWithFormat:@"%lds", (long)(self.totalSecond - (int)interval)] forState:UIControlStateNormal];
     }
 }
 

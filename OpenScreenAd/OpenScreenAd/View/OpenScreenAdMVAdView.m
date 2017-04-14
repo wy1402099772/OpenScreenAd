@@ -40,38 +40,37 @@
     
     [self addSubview:self.bannerView];
     [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(OSA_SCREENAPPLYHEIGHT(70));
-        make.left.equalTo(self).offset(OSA_SCREENAPPLYHEIGHT(35));
+        make.top.equalTo(self).offset(OSA_SCREENAPPLYHEIGHT(155));
         make.centerX.equalTo(self);
-        make.height.equalTo(self.bannerView.mas_width).multipliedBy(0.51);
+        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(170));
+        make.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(300));
     }];
     
     [self addSubview:self.bannerImageView];
     [self.bannerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(OSA_SCREENAPPLYHEIGHT(65));
-        make.left.equalTo(self).offset(OSA_SCREENAPPLYHEIGHT(35));
-        make.centerX.equalTo(self);
-        make.height.equalTo(self.bannerImageView.mas_width).multipliedBy(0.51);
+        make.center.equalTo(self.bannerView);
+        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(143));
+        make.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(282));
     }];
     
     [self addSubview:self.adLabel];
     [self.adLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self);
-        make.top.equalTo(self).offset(OSA_SCREENAPPLYHEIGHT(25));
-        make.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(32));
-        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(16));
+        make.left.equalTo(self).offset(OSA_SCREENAPPLYSPACE(9));
+        make.top.equalTo(self).offset(OSA_SCREENAPPLYHEIGHT(30));
+        make.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(87));
+        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(17));
     }];
     
     [self addSubview:self.avatarImageView];
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self).offset(- OSA_SCREENAPPLYHEIGHT(215));
+        make.top.equalTo(self.bannerView.mas_bottom).offset(OSA_SCREENAPPLYHEIGHT(32));
         make.centerX.equalTo(self);
-        make.height.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(70));
+        make.height.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(50));
     }];
     
     [self addSubview:self.displayAppNameLabel];
     [self.displayAppNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.avatarImageView.mas_bottom).offset(OSA_SCREENAPPLYHEIGHT(22));
+        make.top.equalTo(self.avatarImageView.mas_bottom).offset(OSA_SCREENAPPLYHEIGHT(16));
         make.centerX.equalTo(self);
         make.left.equalTo(self).offset(OSA_SCREENAPPLYSPACE(23));
         make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(21));
@@ -91,9 +90,8 @@
 - (UIImageView *)bannerView {
     if(!_bannerView) {
         _bannerView = [[UIImageView alloc] init];
-        _bannerView.layer.borderWidth = 4;
-        _bannerView.layer.borderColor = [UIColor whiteColor].CGColor;
-        _bannerView.layer.allowsEdgeAntialiasing = YES;
+        UIImage *image = [UIImage imageWithContentsOfFile:[OSA_RESOUCE_BUNDLE pathForResource:@"image_add_flower_border@3x" ofType:@"png"]];
+        _bannerView.image = image;
     }
     return _bannerView;
 }
@@ -101,12 +99,9 @@
 - (UIImageView *)bannerImageView {
     if(!_bannerImageView) {
         _bannerImageView = [[UIImageView alloc] init];
-        //        [_bannerImageView sd_setImageWithURL:[NSURL URLWithString:self.campaign.imageUrl]];
-        __weak typeof(self) weakSelf = self;
         [self.campaign loadImageUrlAsyncWithBlock:^(UIImage *image) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 _bannerImageView.image = image;
-                weakSelf.bannerView.image = image;
             });
         }];
         _bannerImageView.layer.borderWidth = 4;
@@ -119,17 +114,13 @@
 - (UIImageView *)avatarImageView {
     if(!_avatarImageView) {
         _avatarImageView = [[UIImageView alloc] init];
-        //        [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:self.campaign.iconUrl] placeholderImage:[UIImage imageNamed:@"image_placeholder_user_small.png"]];
         [self.campaign loadIconUrlAsyncWithBlock:^(UIImage *image) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 _avatarImageView.image = image;
             });
         }];
-        _avatarImageView.hidden = YES;
-        _avatarImageView.layer.cornerRadius = OSA_SCREENAPPLYHEIGHT(70) / 2;
+        _avatarImageView.layer.cornerRadius = OSA_SCREENAPPLYHEIGHT(50) / 2;
         _avatarImageView.layer.masksToBounds = YES;
-        _avatarImageView.layer.borderColor = [UIColor whiteColor].CGColor;
-        _avatarImageView.layer.borderWidth = 3;
     }
     return _avatarImageView;
 }
@@ -163,7 +154,6 @@
         _adLabel.font = [UIFont systemFontOfSize:OSA_SCREENAPPLYHEIGHT(12)];
         _adLabel.textColor = [UIColor whiteColor];
         _adLabel.text = @"Sponsored";
-        _adLabel.textAlignment = NSTextAlignmentCenter;
         _adLabel.alpha = 0.4;
     }
     return _adLabel;

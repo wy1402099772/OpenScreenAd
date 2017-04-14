@@ -14,6 +14,8 @@
 #define OSA_SCREENAPPLYSPACE(x) OSA_SCREEN_WIDTH / 375.0 * (x)
 #define OSA_SCREENAPPLYHEIGHT(x) OSA_SCREEN_HEIGHT / 667.0 * (x)
 
+#define OSA_RESOUCE_BUNDLE [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"OpenScreenAd" ofType:@"bundle"]]
+
 static NSUInteger kOSASkipButtonSize = 40;
 static NSUInteger kOSASkipCircleWidth = 3;
 
