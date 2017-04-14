@@ -25,7 +25,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    [controller presentViewController:[[OpenScreenAdViewController alloc] init] animated:NO completion:nil];
+    OpenScreenAdViewController *adController = [[OpenScreenAdViewController alloc] init];
+    [adController setAppID:@"29403" apiKey:@"7e03a2daee806fefa292d1447ea50155"];
+    [adController configureWithUnitId:@"3763"];
+    [adController startLoadAd];
+    [controller presentViewController:adController animated:NO completion:nil];
     
     return YES;
 }

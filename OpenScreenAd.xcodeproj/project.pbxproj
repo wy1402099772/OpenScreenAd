@@ -18,6 +18,32 @@
 		9371ABF71E9F57960091CEFF /* OpenScreenAdCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABF61E9F57960091CEFF /* OpenScreenAdCircleView.m */; };
 		9371ABFB1E9F60170091CEFF /* OpenScreenAdParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABFA1E9F60170091CEFF /* OpenScreenAdParameters.m */; };
 		9371AC071E9F898E0091CEFF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9371AC061E9F898E0091CEFF /* Default@2x.png */; };
+		9371AC101EA074940091CEFF /* OpenScreenAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AC0F1EA074940091CEFF /* OpenScreenAdManager.m */; };
+		9371AC7B1EA0AC110091CEFF /* MVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC781EA0AC110091CEFF /* MVSDK.framework */; };
+		9371AC7C1EA0AC110091CEFF /* MVSDKAppWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC791EA0AC110091CEFF /* MVSDKAppWall.framework */; };
+		9371AC7D1EA0AC110091CEFF /* MVSDKReward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC7A1EA0AC110091CEFF /* MVSDKReward.framework */; };
+		9371AC801EA0AC320091CEFF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC7F1EA0AC320091CEFF /* libsqlite3.tbd */; };
+		9371AC821EA0AC3A0091CEFF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC811EA0AC3A0091CEFF /* libz.tbd */; };
+		9371AC841EA0AC420091CEFF /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC831EA0AC420091CEFF /* AdSupport.framework */; };
+		9371AC861EA0AC4F0091CEFF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC851EA0AC4F0091CEFF /* StoreKit.framework */; };
+		9371AC881EA0AC550091CEFF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC871EA0AC550091CEFF /* QuartzCore.framework */; };
+		9371AC8A1EA0AC5E0091CEFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC891EA0AC5E0091CEFF /* CoreLocation.framework */; };
+		9371AC8C1EA0AC640091CEFF /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC8B1EA0AC640091CEFF /* CoreTelephony.framework */; };
+		9371AC8E1EA0AC6E0091CEFF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC8D1EA0AC6E0091CEFF /* MobileCoreServices.framework */; };
+		9371AC901EA0AC770091CEFF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC8F1EA0AC770091CEFF /* Accelerate.framework */; };
+		9371AC921EA0AC7F0091CEFF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9371AC911EA0AC7F0091CEFF /* SystemConfiguration.framework */; };
+		9371AC951EA0BB540091CEFF /* OpenScreenMobVistaUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AC941EA0BB540091CEFF /* OpenScreenMobVistaUnit.m */; };
+		9371ACB21EA0C0C80091CEFF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9371AC981EA0C0C80091CEFF /* Info.plist */; };
+		9371ACB31EA0C0C80091CEFF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AC9A1EA0C0C80091CEFF /* MASCompositeConstraint.m */; };
+		9371ACB41EA0C0C80091CEFF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AC9D1EA0C0C80091CEFF /* MASConstraint.m */; };
+		9371ACB51EA0C0C80091CEFF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AC9F1EA0C0C80091CEFF /* MASConstraintMaker.m */; };
+		9371ACB61EA0C0C80091CEFF /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACA11EA0C0C80091CEFF /* MASLayoutConstraint.m */; };
+		9371ACB71EA0C0C80091CEFF /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACA51EA0C0C80091CEFF /* MASViewAttribute.m */; };
+		9371ACB81EA0C0C80091CEFF /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACA71EA0C0C80091CEFF /* MASViewConstraint.m */; };
+		9371ACB91EA0C0C80091CEFF /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACA91EA0C0C80091CEFF /* NSArray+MASAdditions.m */; };
+		9371ACBA1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACAC1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		9371ACBB1EA0C0C80091CEFF /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACAE1EA0C0C80091CEFF /* View+MASAdditions.m */; };
+		9371ACBC1EA0C0C80091CEFF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACB11EA0C0C80091CEFF /* ViewController+MASAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +66,50 @@
 		9371ABF91E9F60170091CEFF /* OpenScreenAdParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdParameters.h; sourceTree = "<group>"; };
 		9371ABFA1E9F60170091CEFF /* OpenScreenAdParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdParameters.m; sourceTree = "<group>"; };
 		9371AC061E9F898E0091CEFF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9371AC0E1EA074940091CEFF /* OpenScreenAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdManager.h; sourceTree = "<group>"; };
+		9371AC0F1EA074940091CEFF /* OpenScreenAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdManager.m; sourceTree = "<group>"; };
+		9371AC781EA0AC110091CEFF /* MVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MVSDK.framework; sourceTree = "<group>"; };
+		9371AC791EA0AC110091CEFF /* MVSDKAppWall.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MVSDKAppWall.framework; sourceTree = "<group>"; };
+		9371AC7A1EA0AC110091CEFF /* MVSDKReward.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MVSDKReward.framework; sourceTree = "<group>"; };
+		9371AC7F1EA0AC320091CEFF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		9371AC811EA0AC3A0091CEFF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9371AC831EA0AC420091CEFF /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		9371AC851EA0AC4F0091CEFF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9371AC871EA0AC550091CEFF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9371AC891EA0AC5E0091CEFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9371AC8B1EA0AC640091CEFF /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9371AC8D1EA0AC6E0091CEFF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9371AC8F1EA0AC770091CEFF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		9371AC911EA0AC7F0091CEFF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9371AC931EA0BB540091CEFF /* OpenScreenMobVistaUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenMobVistaUnit.h; sourceTree = "<group>"; };
+		9371AC941EA0BB540091CEFF /* OpenScreenMobVistaUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenMobVistaUnit.m; sourceTree = "<group>"; };
+		9371AC961EA0BD2E0091CEFF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9371AC981EA0C0C80091CEFF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9371AC991EA0C0C80091CEFF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		9371AC9A1EA0C0C80091CEFF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		9371AC9B1EA0C0C80091CEFF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		9371AC9C1EA0C0C80091CEFF /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		9371AC9D1EA0C0C80091CEFF /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		9371AC9E1EA0C0C80091CEFF /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		9371AC9F1EA0C0C80091CEFF /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		9371ACA01EA0C0C80091CEFF /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		9371ACA11EA0C0C80091CEFF /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		9371ACA21EA0C0C80091CEFF /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		9371ACA31EA0C0C80091CEFF /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		9371ACA41EA0C0C80091CEFF /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		9371ACA51EA0C0C80091CEFF /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		9371ACA61EA0C0C80091CEFF /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		9371ACA71EA0C0C80091CEFF /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		9371ACA81EA0C0C80091CEFF /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		9371ACA91EA0C0C80091CEFF /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		9371ACAA1EA0C0C80091CEFF /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		9371ACAB1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		9371ACAC1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		9371ACAD1EA0C0C80091CEFF /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		9371ACAE1EA0C0C80091CEFF /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		9371ACAF1EA0C0C80091CEFF /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		9371ACB01EA0C0C80091CEFF /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		9371ACB11EA0C0C80091CEFF /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +117,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9371AC921EA0AC7F0091CEFF /* SystemConfiguration.framework in Frameworks */,
+				9371AC901EA0AC770091CEFF /* Accelerate.framework in Frameworks */,
+				9371AC8E1EA0AC6E0091CEFF /* MobileCoreServices.framework in Frameworks */,
+				9371AC8C1EA0AC640091CEFF /* CoreTelephony.framework in Frameworks */,
+				9371AC8A1EA0AC5E0091CEFF /* CoreLocation.framework in Frameworks */,
+				9371AC881EA0AC550091CEFF /* QuartzCore.framework in Frameworks */,
+				9371AC861EA0AC4F0091CEFF /* StoreKit.framework in Frameworks */,
+				9371AC841EA0AC420091CEFF /* AdSupport.framework in Frameworks */,
+				9371AC821EA0AC3A0091CEFF /* libz.tbd in Frameworks */,
+				9371AC801EA0AC320091CEFF /* libsqlite3.tbd in Frameworks */,
+				9371AC7D1EA0AC110091CEFF /* MVSDKReward.framework in Frameworks */,
+				9371AC7C1EA0AC110091CEFF /* MVSDKAppWall.framework in Frameworks */,
+				9371AC7B1EA0AC110091CEFF /* MVSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +141,7 @@
 			children = (
 				9371ABD51E9F502C0091CEFF /* OpenScreenAd */,
 				9371ABD41E9F502C0091CEFF /* Products */,
+				9371AC7E1EA0AC320091CEFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +156,8 @@
 		9371ABD51E9F502C0091CEFF /* OpenScreenAd */ = {
 			isa = PBXGroup;
 			children = (
+				9371AC971EA0C0C80091CEFF /* Masonry */,
+				9371AC771EA0AC110091CEFF /* Mobvista_GetZ */,
 				9371ABED1E9F51240091CEFF /* OpenScreenAd */,
 				9371ABD91E9F502C0091CEFF /* AppDelegate.h */,
 				9371ABDA1E9F502C0091CEFF /* AppDelegate.m */,
@@ -91,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				9371ABD71E9F502C0091CEFF /* main.m */,
+				9371AC961EA0BD2E0091CEFF /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -98,6 +185,7 @@
 		9371ABED1E9F51240091CEFF /* OpenScreenAd */ = {
 			isa = PBXGroup;
 			children = (
+				9371AC0D1EA074740091CEFF /* AdData */,
 				9371ABF11E9F51990091CEFF /* View */,
 				9371ABEE1E9F51350091CEFF /* OpenScreenAdViewController.h */,
 				9371ABEF1E9F51350091CEFF /* OpenScreenAdViewController.m */,
@@ -116,6 +204,77 @@
 				9371ABF31E9F51A60091CEFF /* OpenScreenAdSkipButton.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9371AC0D1EA074740091CEFF /* AdData */ = {
+			isa = PBXGroup;
+			children = (
+				9371AC931EA0BB540091CEFF /* OpenScreenMobVistaUnit.h */,
+				9371AC941EA0BB540091CEFF /* OpenScreenMobVistaUnit.m */,
+				9371AC0E1EA074940091CEFF /* OpenScreenAdManager.h */,
+				9371AC0F1EA074940091CEFF /* OpenScreenAdManager.m */,
+			);
+			path = AdData;
+			sourceTree = "<group>";
+		};
+		9371AC771EA0AC110091CEFF /* Mobvista_GetZ */ = {
+			isa = PBXGroup;
+			children = (
+				9371AC781EA0AC110091CEFF /* MVSDK.framework */,
+				9371AC791EA0AC110091CEFF /* MVSDKAppWall.framework */,
+				9371AC7A1EA0AC110091CEFF /* MVSDKReward.framework */,
+			);
+			path = Mobvista_GetZ;
+			sourceTree = "<group>";
+		};
+		9371AC7E1EA0AC320091CEFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9371AC911EA0AC7F0091CEFF /* SystemConfiguration.framework */,
+				9371AC8F1EA0AC770091CEFF /* Accelerate.framework */,
+				9371AC8D1EA0AC6E0091CEFF /* MobileCoreServices.framework */,
+				9371AC8B1EA0AC640091CEFF /* CoreTelephony.framework */,
+				9371AC891EA0AC5E0091CEFF /* CoreLocation.framework */,
+				9371AC871EA0AC550091CEFF /* QuartzCore.framework */,
+				9371AC851EA0AC4F0091CEFF /* StoreKit.framework */,
+				9371AC831EA0AC420091CEFF /* AdSupport.framework */,
+				9371AC811EA0AC3A0091CEFF /* libz.tbd */,
+				9371AC7F1EA0AC320091CEFF /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9371AC971EA0C0C80091CEFF /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				9371AC981EA0C0C80091CEFF /* Info.plist */,
+				9371AC991EA0C0C80091CEFF /* MASCompositeConstraint.h */,
+				9371AC9A1EA0C0C80091CEFF /* MASCompositeConstraint.m */,
+				9371AC9B1EA0C0C80091CEFF /* MASConstraint+Private.h */,
+				9371AC9C1EA0C0C80091CEFF /* MASConstraint.h */,
+				9371AC9D1EA0C0C80091CEFF /* MASConstraint.m */,
+				9371AC9E1EA0C0C80091CEFF /* MASConstraintMaker.h */,
+				9371AC9F1EA0C0C80091CEFF /* MASConstraintMaker.m */,
+				9371ACA01EA0C0C80091CEFF /* MASLayoutConstraint.h */,
+				9371ACA11EA0C0C80091CEFF /* MASLayoutConstraint.m */,
+				9371ACA21EA0C0C80091CEFF /* Masonry.h */,
+				9371ACA31EA0C0C80091CEFF /* MASUtilities.h */,
+				9371ACA41EA0C0C80091CEFF /* MASViewAttribute.h */,
+				9371ACA51EA0C0C80091CEFF /* MASViewAttribute.m */,
+				9371ACA61EA0C0C80091CEFF /* MASViewConstraint.h */,
+				9371ACA71EA0C0C80091CEFF /* MASViewConstraint.m */,
+				9371ACA81EA0C0C80091CEFF /* NSArray+MASAdditions.h */,
+				9371ACA91EA0C0C80091CEFF /* NSArray+MASAdditions.m */,
+				9371ACAA1EA0C0C80091CEFF /* NSArray+MASShorthandAdditions.h */,
+				9371ACAB1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.h */,
+				9371ACAC1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.m */,
+				9371ACAD1EA0C0C80091CEFF /* View+MASAdditions.h */,
+				9371ACAE1EA0C0C80091CEFF /* View+MASAdditions.m */,
+				9371ACAF1EA0C0C80091CEFF /* View+MASShorthandAdditions.h */,
+				9371ACB01EA0C0C80091CEFF /* ViewController+MASAdditions.h */,
+				9371ACB11EA0C0C80091CEFF /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +339,7 @@
 				9371ABE61E9F502C0091CEFF /* LaunchScreen.storyboard in Resources */,
 				9371ABE31E9F502C0091CEFF /* Assets.xcassets in Resources */,
 				9371AC071E9F898E0091CEFF /* Default@2x.png in Resources */,
+				9371ACB21EA0C0C80091CEFF /* Info.plist in Resources */,
 				9371ABE11E9F502C0091CEFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,12 +351,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9371ACB81EA0C0C80091CEFF /* MASViewConstraint.m in Sources */,
 				9371ABDE1E9F502C0091CEFF /* ViewController.m in Sources */,
+				9371ACB71EA0C0C80091CEFF /* MASViewAttribute.m in Sources */,
 				9371ABFB1E9F60170091CEFF /* OpenScreenAdParameters.m in Sources */,
+				9371AC101EA074940091CEFF /* OpenScreenAdManager.m in Sources */,
 				9371ABF01E9F51350091CEFF /* OpenScreenAdViewController.m in Sources */,
+				9371ACB31EA0C0C80091CEFF /* MASCompositeConstraint.m in Sources */,
+				9371ACB51EA0C0C80091CEFF /* MASConstraintMaker.m in Sources */,
+				9371ACBB1EA0C0C80091CEFF /* View+MASAdditions.m in Sources */,
+				9371ACB61EA0C0C80091CEFF /* MASLayoutConstraint.m in Sources */,
+				9371ACBC1EA0C0C80091CEFF /* ViewController+MASAdditions.m in Sources */,
+				9371ACB41EA0C0C80091CEFF /* MASConstraint.m in Sources */,
 				9371ABF41E9F51A60091CEFF /* OpenScreenAdSkipButton.m in Sources */,
 				9371ABF71E9F57960091CEFF /* OpenScreenAdCircleView.m in Sources */,
+				9371ACB91EA0C0C80091CEFF /* NSArray+MASAdditions.m in Sources */,
+				9371ACBA1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				9371ABDB1E9F502C0091CEFF /* AppDelegate.m in Sources */,
+				9371AC951EA0BB540091CEFF /* OpenScreenMobVistaUnit.m in Sources */,
 				9371ABD81E9F502C0091CEFF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,8 +490,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9R36C42WH7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenScreenAd/Mobvista_GetZ",
+				);
+				GCC_PREFIX_HEADER = OpenScreenAd/PrefixHeader.pch;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/OpenScreenAd/Mobvista_GetZ/";
 				INFOPLIST_FILE = OpenScreenAd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiefeihahaha.instagrab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ea72db5c-b87f-4875-92c4-85f393959ce3";
@@ -332,8 +511,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenScreenAd/Mobvista_GetZ",
+				);
+				GCC_PREFIX_HEADER = OpenScreenAd/PrefixHeader.pch;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/OpenScreenAd/Mobvista_GetZ/";
 				INFOPLIST_FILE = OpenScreenAd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiefeihahaha.instagrab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -359,6 +545,7 @@
 				9371ABEC1E9F502C0091CEFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

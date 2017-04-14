@@ -23,4 +23,9 @@
 
 @property (nonatomic, weak  ) id<OpenScreenAdViewControllerDelegate> delegate;
 
+- (void)setAppID:(NSString *)appId apiKey:(NSString *)apiKey;
+- (void)configureWithUnitId:(NSString *)unitId;
+
+- (void)startLoadAd;
+
 @end

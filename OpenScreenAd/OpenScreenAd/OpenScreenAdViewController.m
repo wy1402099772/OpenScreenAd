@@ -9,6 +9,7 @@
 #import "OpenScreenAdViewController.h"
 #import "OpenScreenAdParameters.h"
 #import "OpenScreenAdSkipButton.h"
+#import "OpenScreenAdManager.h"
 
 @interface OpenScreenAdViewController () <OpenScreenAdSkipButtonDelegate>
 
@@ -16,9 +17,18 @@
 @property (nonatomic, strong) UIImageView *bgImageView;
 @property (nonatomic, strong) UILabel *tipLabel;
 
+@property (nonatomic, strong) OpenScreenAdManager *dataManager;
+
 @end
 
 @implementation OpenScreenAdViewController
+
+- (instancetype)init {
+    if(self = [super init]) {
+        
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +49,15 @@
 }
 
 
+#pragma mark - Public
+- (void)setAppID:(NSString *)appId apiKey:(NSString *)apiKey {
+    [self.dataManager setAppID:appId apiKey:apiKey];
+}
+
+- (void)configureWithUnitId:(NSString *)unitId {
+    [self.dataManager configureWithUnitId:unitId];
+}
+
 #pragma mark - Private
 - (void)configureView {
     self.view.backgroundColor = [UIColor whiteColor];
@@ -58,6 +77,10 @@
             [weakSelf.delegate openScreenAdDidClickSkipAndDidDismiss];
         }
     }];
+}
+
+- (void)startLoadAd {
+    [self.dataManager startLoadAd];
 }
 
 
@@ -117,6 +140,13 @@
         _tipLabel.hidden = YES;
     }
     return _tipLabel;
+}
+
+- (OpenScreenAdManager *)dataManager {
+    if(!_dataManager) {
+        _dataManager = [[OpenScreenAdManager alloc] init];
+    }
+    return _dataManager;
 }
 
 @end
