@@ -44,6 +44,7 @@
 		9371ACBA1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACAC1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		9371ACBB1EA0C0C80091CEFF /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACAE1EA0C0C80091CEFF /* View+MASAdditions.m */; };
 		9371ACBC1EA0C0C80091CEFF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACB11EA0C0C80091CEFF /* ViewController+MASAdditions.m */; };
+		9371ACBF1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,8 @@
 		9371ACAF1EA0C0C80091CEFF /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		9371ACB01EA0C0C80091CEFF /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		9371ACB11EA0C0C80091CEFF /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		9371ACBD1EA0C3D20091CEFF /* OpenScreenAdMVAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdMVAdView.h; sourceTree = "<group>"; };
+		9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdMVAdView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,8 @@
 				9371ABF61E9F57960091CEFF /* OpenScreenAdCircleView.m */,
 				9371ABF21E9F51A60091CEFF /* OpenScreenAdSkipButton.h */,
 				9371ABF31E9F51A60091CEFF /* OpenScreenAdSkipButton.m */,
+				9371ACBD1EA0C3D20091CEFF /* OpenScreenAdMVAdView.h */,
+				9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 				9371AC101EA074940091CEFF /* OpenScreenAdManager.m in Sources */,
 				9371ABF01E9F51350091CEFF /* OpenScreenAdViewController.m in Sources */,
 				9371ACB31EA0C0C80091CEFF /* MASCompositeConstraint.m in Sources */,
+				9371ACBF1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m in Sources */,
 				9371ACB51EA0C0C80091CEFF /* MASConstraintMaker.m in Sources */,
 				9371ACBB1EA0C0C80091CEFF /* View+MASAdditions.m in Sources */,
 				9371ACB61EA0C0C80091CEFF /* MASLayoutConstraint.m in Sources */,

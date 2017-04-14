@@ -29,6 +29,8 @@
     [adController setAppID:@"29403" apiKey:@"7e03a2daee806fefa292d1447ea50155"];
     [adController configureWithUnitId:@"3763"];
     [adController startLoadAd];
+    adController.allowSkipSecond = 5;
+    adController.totalSecond = 20;
     [controller presentViewController:adController animated:NO completion:nil];
     
     return YES;

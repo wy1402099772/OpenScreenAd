@@ -70,6 +70,9 @@
     if (nativeAds.count > 0) {
         
         [self.adArray addObjectsFromArray:nativeAds];
+        if(self.delegate && [self.delegate respondsToSelector:@selector(openScreenMobvistaUnitDidGetAd)]) {
+            [self.delegate openScreenMobvistaUnitDidGetAd];
+        }
     }
 }
 

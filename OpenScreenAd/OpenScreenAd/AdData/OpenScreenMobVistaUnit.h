@@ -11,6 +11,12 @@
 
 @class MVCampaign;
 
+@protocol OpenScreenMobVistaUnitDelegate <NSObject>
+
+- (void)openScreenMobvistaUnitDidGetAd;
+
+@end
+
 @interface OpenScreenMobVistaUnit : NSObject
 
 - (instancetype)initWithUnitId:(NSString *)unidId preloadCount:(NSInteger)preloadCount storeCount:(NSInteger)storeCount;
@@ -22,5 +28,7 @@
 - (void)preloadMVNativeAd;
 
 @property (nonatomic, strong, readonly) NSString *unitId;
+
+@property (nonatomic, weak) id<OpenScreenMobVistaUnitDelegate> delegate;
 
 @end

@@ -10,7 +10,7 @@
 #import <MVSDK/MVSDK.h>
 #import "OpenScreenMobVistaUnit.h"
 
-@interface OpenScreenAdManager ()
+@interface OpenScreenAdManager () <OpenScreenMobVistaUnitDelegate>
 
 @property (nonatomic, strong) OpenScreenMobVistaUnit *mvUnit;
 
@@ -33,11 +33,33 @@
     [self.mvUnit preloadMVNativeAd];
 }
 
+- (MVCampaign *)getMVCampaign {
+    static MVCampaign *campaign = nil;
+    if(!campaign) {
+        NSArray<MVCampaign *> *ads = [self.mvUnit getNativeAd:1];
+        if(ads.count) {
+            campaign = ads[0];
+        } else {
+            campaign = nil;
+        }
+    }
+    return campaign;
+}
+
+
+#pragma mark - OpenScreenMobVistaUnitDelegate
+- (void)openScreenMobvistaUnitDidGetAd {
+    if(self.delegate && [self.delegate respondsToSelector:@selector(openScreenMVAdDidReach)]) {
+        [self.delegate openScreenMVAdDidReach];
+    }
+}
+
 
 #pragma mark - Getter
 - (OpenScreenMobVistaUnit *)mvUnit {
     if(!_mvUnit) {
         _mvUnit = [[OpenScreenMobVistaUnit alloc] initWithUnitId:_mvUnitId preloadCount:2 storeCount:1];
+        _mvUnit.delegate = self;
     }
     return _mvUnit;
 }

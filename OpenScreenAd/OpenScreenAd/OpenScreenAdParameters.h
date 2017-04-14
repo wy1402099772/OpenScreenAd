@@ -11,6 +11,9 @@
 #define OSA_SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define OSA_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 
+#define OSA_SCREENAPPLYSPACE(x) OSA_SCREEN_WIDTH / 375.0 * (x)
+#define OSA_SCREENAPPLYHEIGHT(x) OSA_SCREEN_HEIGHT / 667.0 * (x)
+
 static NSUInteger kOSASkipButtonSize = 40;
 static NSUInteger kOSASkipCircleWidth = 3;
 
