@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, OpenScreenAdViewCurrentAdType) {
+    OpenScreenAdViewCurrentAdTypeNone = 0,
+    OpenScreenAdViewCurrentAdTypeAdMob,
+    OpenScreenAdViewCurrentAdTypeMobVista
+};
+
 @protocol OpenScreenAdViewControllerDelegate <NSObject>
 
 - (void)openScreenAdDidClickSkipAndWillDismiss;
@@ -15,11 +21,16 @@
 
 @end
 
+
 @interface OpenScreenAdViewController : UIViewController
 
 
 @property (nonatomic, assign) NSUInteger allowSkipSecond;
 @property (nonatomic, assign) NSUInteger totalSecond;
+@property (nonatomic, assign) NSUInteger delaySecond;
+@property (nonatomic, assign) NSUInteger waitSecond;
+
+@property (nonatomic, assign, readonly) OpenScreenAdViewCurrentAdType currentState;
 
 @property (nonatomic, weak  ) id<OpenScreenAdViewControllerDelegate> delegate;
 

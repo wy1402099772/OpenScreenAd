@@ -27,15 +27,18 @@
     
     OpenScreenAdViewController *adController = [[OpenScreenAdViewController alloc] init];
     
-    [adController configureMobAdWithApplicationID:@"ca-app-pub-3940256099942544~1458002511"];
-    [adController configureWithAdMobUnitId:@"ca-app-pub-3940256099942544/8897359316"];
+    [adController configureMobAdWithApplicationID:@"ca-app-pub-3176063063432139~5059019809"];
+    [adController configureWithAdMobUnitId:@"ca-app-pub-3176063063432139/9764983002"];
     
     [adController setAppID:@"29403" apiKey:@"7e03a2daee806fefa292d1447ea50155"];
     [adController configureWithUnitId:@"3763"];
     
+    adController.allowSkipSecond = 3;
+    adController.totalSecond = 5;
+    adController.waitSecond = 3;
+    adController.delaySecond = 1;
+    
     [adController startLoadAd];
-    adController.allowSkipSecond = 5;
-    adController.totalSecond = 20;
     [controller presentViewController:adController animated:NO completion:nil];
     
     return YES;

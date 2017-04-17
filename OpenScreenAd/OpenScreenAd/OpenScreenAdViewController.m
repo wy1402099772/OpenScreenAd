@@ -61,6 +61,10 @@
     [self.indicator startAnimating];
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 
 #pragma mark - Public
 - (void)setAppID:(NSString *)appId apiKey:(NSString *)apiKey {
@@ -83,7 +87,7 @@
     GADRequest *request = [GADRequest request];
     [self.mobAdView loadRequest:request];
     
-    [self.dataManager startLoadAd];
+    [self performSelector:@selector(prepareToLoadMobVista) withObject:nil afterDelay:self.waitSecond];
 }
 
 
@@ -92,7 +96,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.bgImageView];
-    [self.view addSubview:self.skipButton];
     
     [self.view addSubview:self.emitView];
     
@@ -114,6 +117,8 @@
     
     [self.view addSubview:self.mobAdView];
     
+    [self.view addSubview:self.skipButton];
+    
 }
 
 - (void)executeDismiss {
@@ -128,6 +133,28 @@
     }];
 }
 
+- (void)addMVAdToView {
+    _currentState = OpenScreenAdViewCurrentAdTypeMobVista;
+    [self.view addSubview:self.mvAdView];
+    [self.mvAdView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    [self.view bringSubviewToFront:self.skipButton];
+    [self.dataManager registerViewForInteraction:self.mvAdView withCampaign:[self.dataManager getMVCampaign]];
+    
+}
+
+- (void)prepareToLoadMobVista {
+    if(self.currentState == OpenScreenAdViewCurrentAdTypeNone) {
+        [self.dataManager startLoadAd];
+    }
+}
+
+- (void)stopLoading {
+    [self.indicator stopAnimating];
+    
+    [self.emitLayer addToSubView:self.view];
+}
 
 #pragma mark - Action
 
@@ -148,30 +175,27 @@
 
 #pragma mark - OpenScreenAdManagerDelegate
 - (void)openScreenMVAdDidReach {
-    [self.indicator stopAnimating];
     
-    [self.emitLayer addToSubView:self.view];
-    
-    if(self.mvAdView.superview == nil) {
-        [self.view addSubview:self.mvAdView];
-        [self.mvAdView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.view);
-        }];
-        [self.view bringSubviewToFront:self.skipButton];
+    if(self.currentState == OpenScreenAdViewCurrentAdTypeNone) {
+        [self addMVAdToView];
+        [self stopLoading];
     }
-    
-    
-    [self.dataManager registerViewForInteraction:self.mvAdView withCampaign:[self.dataManager getMVCampaign]];
 }
 
 
 #pragma mark - GADNativeExpressAdViewDelegate
 - (void)nativeExpressAdViewDidReceiveAd:(GADNativeExpressAdView *)nativeExpressAdView {
-    self.mobAdView.hidden = NO;
+    if(self.currentState == OpenScreenAdViewCurrentAdTypeNone) {
+        _currentState = OpenScreenAdViewCurrentAdTypeAdMob;
+        self.mobAdView.hidden = NO;
+        [self stopLoading];
+    } else {
+
+    }
 }
 
 - (void)nativeExpressAdView:(GADNativeExpressAdView *)nativeExpressAdView didFailToReceiveAdWithError:(GADRequestError *)error {
-    
+    [self.dataManager startLoadAd];
 }
 
 
@@ -184,6 +208,11 @@
 - (void)setTotalSecond:(NSUInteger)totalSecond {
     _totalSecond = totalSecond;
     self.skipButton.totalSecond = totalSecond;
+}
+
+- (void)setDelaySecond:(NSUInteger)delaySecond {
+    _delaySecond = delaySecond;
+    self.skipButton.delaySecond = delaySecond;
 }
 
 
@@ -258,20 +287,26 @@
 
 - (GADNativeExpressAdView *)mobAdView {
     if (!_mobAdView) {
-        _mobAdView = [[GADNativeExpressAdView alloc] initWithFrame:CGRectMake(OSA_SCREENAPPLYHEIGHT(37.5), OSA_SCREENAPPLYHEIGHT(162.5), OSA_SCREENAPPLYHEIGHT(300), OSA_SCREENAPPLYHEIGHT(300))];
+        _mobAdView = [[GADNativeExpressAdView alloc] initWithFrame:CGRectMake(0, 0, OSA_SCREEN_WIDTH, OSA_SCREEN_HEIGHT)];
         _mobAdView.adUnitID = _mobADdUnitId;
         _mobAdView.delegate = self;
         _mobAdView.rootViewController = self;
+        _mobAdView.hidden = YES;
         
         GADVideoOptions *videoOptions = [[GADVideoOptions alloc] init];
         videoOptions.startMuted = true;
         [_mobAdView setAdOptions:@[ videoOptions ]];
         
         _mobAdView.videoController.delegate = self;
-        
-        _mobAdView.hidden = NO;
     }
     return _mobAdView;
+}
+
+- (NSUInteger)waitSecond {
+    if(!_waitSecond) {
+        _waitSecond = kOSAWaitSecond;
+    }
+    return _waitSecond;
 }
 
 @end

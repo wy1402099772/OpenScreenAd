@@ -21,6 +21,8 @@ static NSUInteger kOSASkipCircleWidth = 3;
 
 static NSUInteger kOSASkipSecond = 3;
 static NSUInteger kOSATotalSecond = 5;
+static NSUInteger kOSAWaitSecond = 3;
+static NSUInteger kOSADelaySecond = 1;
 
 @interface OpenScreenAdParameters : NSObject
 

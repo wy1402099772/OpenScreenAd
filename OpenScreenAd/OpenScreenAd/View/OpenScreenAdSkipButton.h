@@ -21,8 +21,11 @@
 
 - (void)startCountdown;
 
+- (NSUInteger)getRunSecond;
+
 @property (nonatomic, assign) NSUInteger allowSkipSecond;
 @property (nonatomic, assign) NSUInteger totalSecond;
+@property (nonatomic, assign) NSUInteger delaySecond;
 
 @property (nonatomic, strong) id<OpenScreenAdSkipButtonDelegate> delegate;
 

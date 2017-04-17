@@ -36,15 +36,27 @@
 
 #pragma mark - Public
 - (void)startCountdown {
-    [self invalidateTimer];
-    [self startTaskConfig];
+    [self performSelector:@selector(prepareToCountDown) withObject:nil afterDelay:self.delaySecond];
+}
+
+- (NSUInteger)getRunSecond {
+    return [[NSDate date] timeIntervalSince1970] - self.logInterval;
 }
 
 
 #pragma mark - Private
 - (void)configureView {
+    self.hidden = YES;
+    
     [self addSubview:self.circleView];
     [self addSubview:self.actionButton];
+}
+
+- (void)prepareToCountDown {
+    self.hidden = NO;
+    
+    [self invalidateTimer];
+    [self startTaskConfig];
 }
 
 - (void)startTaskConfig {
@@ -149,6 +161,13 @@
         _totalSecond = kOSATotalSecond;
     }
     return _totalSecond;
+}
+
+- (NSUInteger)delaySecond {
+    if(!_delaySecond) {
+        _delaySecond = kOSADelaySecond;
+    }
+    return _delaySecond;
 }
 
 @end
