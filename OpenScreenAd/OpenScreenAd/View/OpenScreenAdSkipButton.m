@@ -129,7 +129,7 @@
     if(!_actionButton) {
         _actionButton = [[UIButton alloc] initWithFrame:CGRectMake(kOSASkipCircleWidth, kOSASkipCircleWidth, kOSASkipButtonSize - 2 * kOSASkipCircleWidth, kOSASkipButtonSize - 2 * kOSASkipCircleWidth)];
         [_actionButton addTarget:self action:@selector(skipButtonDidSelectAction:) forControlEvents:UIControlEventTouchUpInside];
-        _actionButton.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.2];
+        _actionButton.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         _actionButton.layer.cornerRadius = (kOSASkipButtonSize - 2 * kOSASkipCircleWidth) / 2.0;
         _actionButton.layer.masksToBounds = YES;
         _actionButton.titleLabel.font = [UIFont systemFontOfSize:12];

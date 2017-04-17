@@ -104,7 +104,7 @@
         _progressLayer = [CAShapeLayer layer];
         _progressLayer.frame = self.bounds;
         _progressLayer.fillColor = [[UIColor clearColor] CGColor];
-        _progressLayer.strokeColor = [UIColor redColor].CGColor;//!!!不能用clearColor
+        _progressLayer.strokeColor = [UIColor whiteColor].CGColor;//!!!不能用clearColor
         _progressLayer.lineCap=kCALineCapRound;
         _progressLayer.strokeEnd=0.0;
         [self.layer addSublayer:_progressLayer];

@@ -49,6 +49,7 @@
 		9371ACC11EA0D94E0091CEFF /* OpenScreenAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9371ACC01EA0D94E0091CEFF /* OpenScreenAd.bundle */; };
 		9371AD041EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */; };
 		9371AD071EA0FA6E0091CEFF /* OpenScreenAdGoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AD061EA0FA6E0091CEFF /* OpenScreenAdGoView.m */; };
+		93D184671EA4C22A009DD2B3 /* OpenScreenAdFlashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D184661EA4C22A009DD2B3 /* OpenScreenAdFlashView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,8 @@
 		9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdEmitterLayer.m; sourceTree = "<group>"; };
 		9371AD051EA0FA6E0091CEFF /* OpenScreenAdGoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdGoView.h; sourceTree = "<group>"; };
 		9371AD061EA0FA6E0091CEFF /* OpenScreenAdGoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdGoView.m; sourceTree = "<group>"; };
+		93D184651EA4C22A009DD2B3 /* OpenScreenAdFlashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdFlashView.h; sourceTree = "<group>"; };
+		93D184661EA4C22A009DD2B3 /* OpenScreenAdFlashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdFlashView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +225,8 @@
 		9371ABF11E9F51990091CEFF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				93D184651EA4C22A009DD2B3 /* OpenScreenAdFlashView.h */,
+				93D184661EA4C22A009DD2B3 /* OpenScreenAdFlashView.m */,
 				9371ABF51E9F57960091CEFF /* OpenScreenAdCircleView.h */,
 				9371ABF61E9F57960091CEFF /* OpenScreenAdCircleView.m */,
 				9371ABF21E9F51A60091CEFF /* OpenScreenAdSkipButton.h */,
@@ -387,6 +392,7 @@
 				9371ABDE1E9F502C0091CEFF /* ViewController.m in Sources */,
 				9371ACB71EA0C0C80091CEFF /* MASViewAttribute.m in Sources */,
 				9371ABFB1E9F60170091CEFF /* OpenScreenAdParameters.m in Sources */,
+				93D184671EA4C22A009DD2B3 /* OpenScreenAdFlashView.m in Sources */,
 				9371AC101EA074940091CEFF /* OpenScreenAdManager.m in Sources */,
 				9371ABF01E9F51350091CEFF /* OpenScreenAdViewController.m in Sources */,
 				9371ACB31EA0C0C80091CEFF /* MASCompositeConstraint.m in Sources */,

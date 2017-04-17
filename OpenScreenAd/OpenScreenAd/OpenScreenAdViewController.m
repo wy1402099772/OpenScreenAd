@@ -14,6 +14,7 @@
 #import "Masonry.h"
 #import "OpenScreenAdEmitterLayer.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
+#import "OpenScreenAdFlashView.h"
 
 @interface OpenScreenAdViewController () <OpenScreenAdSkipButtonDelegate, OpenScreenAdManagerDelegate, GADNativeExpressAdViewDelegate, GADVideoControllerDelegate>
 
@@ -28,6 +29,8 @@
 
 @property (nonatomic, strong) OpenScreenAdMVAdView *mvAdView;
 @property (nonatomic, strong) GADNativeExpressAdView *mobAdView;
+
+@property (nonatomic, strong) OpenScreenAdFlashView *flashView;
 
 @property (nonatomic, strong) NSString *mobADdUnitId;
 
@@ -126,6 +129,7 @@
     }];
     
     [self.view addSubview:self.mobAdView];
+    [self.mobAdView addSubview:self.flashView];
     
     [self.view addSubview:self.skipButton];
     
@@ -166,6 +170,10 @@
     [self.emitLayer addToSubView:self.view];
 }
 
+- (void)startFlashLayer {
+    [self.flashView startFlash];
+}
+
 #pragma mark - Action
 
 
@@ -198,6 +206,7 @@
     if(self.currentState == OpenScreenAdViewCurrentAdTypeNone) {
         _currentState = OpenScreenAdViewCurrentAdTypeAdMob;
         self.mobAdView.hidden = NO;
+        [self startFlashLayer];
         [self stopLoading];
     } else {
 
@@ -205,6 +214,7 @@
 }
 
 - (void)nativeExpressAdView:(GADNativeExpressAdView *)nativeExpressAdView didFailToReceiveAdWithError:(GADRequestError *)error {
+    [[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(prepareToLoadMobVista) object:nil];
     [self.dataManager startLoadAd];
 }
 
@@ -318,5 +328,14 @@
     }
     return _waitSecond;
 }
+
+- (OpenScreenAdFlashView *)flashView {
+    if(!_flashView) {
+        _flashView = [[OpenScreenAdFlashView alloc] initWithFrame:CGRectMake(0, OSA_SCREEN_HEIGHT - 50, OSA_SCREEN_WIDTH, 50)];
+    }
+    return _flashView;
+}
+
+
 
 @end
