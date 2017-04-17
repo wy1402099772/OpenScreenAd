@@ -54,11 +54,21 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self.skipButton startCountdown];
-    [self.indicator startAnimating];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self.skipButton startCountdown];
+        [self.indicator startAnimating];
+    });
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
 - (BOOL)prefersStatusBarHidden {
