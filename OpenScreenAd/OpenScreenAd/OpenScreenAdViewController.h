@@ -26,6 +26,9 @@
 - (void)setAppID:(NSString *)appId apiKey:(NSString *)apiKey;
 - (void)configureWithUnitId:(NSString *)unitId;
 
+- (void)configureMobAdWithApplicationID:(NSString *)mobAdAppId;
+- (void)configureWithAdMobUnitId:(NSString *)mobAdUnitid;
+
 - (void)startLoadAd;
 
 @end

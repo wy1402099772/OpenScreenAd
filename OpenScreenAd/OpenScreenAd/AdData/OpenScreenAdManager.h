@@ -18,14 +18,17 @@
 
 @interface OpenScreenAdManager : NSObject
 
+//MV
 - (void)setAppID:(NSString *)appId apiKey:(NSString *)apiKey;
 - (void)configureWithUnitId:(NSString *)unitId;
 
+- (MVCampaign *)getMVCampaign;
+- (void)registerViewForInteraction:(UIView *)view withCampaign:(MVCampaign *)campaign;
+
+
 - (void)startLoadAd;
 
-- (MVCampaign *)getMVCampaign;
 
-- (void)registerViewForInteraction:(UIView *)view withCampaign:(MVCampaign *)campaign;
 
 
 @property (nonatomic, weak) id<OpenScreenAdManagerDelegate> delegate;

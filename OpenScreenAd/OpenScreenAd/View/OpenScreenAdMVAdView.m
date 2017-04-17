@@ -124,7 +124,7 @@
                 _avatarImageView.image = image;
             });
         }];
-        _avatarImageView.layer.cornerRadius = OSA_SCREENAPPLYHEIGHT(50) / 2;
+        _avatarImageView.layer.cornerRadius = OSA_SCREENAPPLYHEIGHT(3);
         _avatarImageView.layer.masksToBounds = YES;
     }
     return _avatarImageView;

@@ -13,8 +13,9 @@
 #import "OpenScreenAdMVAdView.h"
 #import "Masonry.h"
 #import "OpenScreenAdEmitterLayer.h"
+#import <GoogleMobileAds/GoogleMobileAds.h>
 
-@interface OpenScreenAdViewController () <OpenScreenAdSkipButtonDelegate, OpenScreenAdManagerDelegate>
+@interface OpenScreenAdViewController () <OpenScreenAdSkipButtonDelegate, OpenScreenAdManagerDelegate, GADNativeExpressAdViewDelegate, GADVideoControllerDelegate>
 
 @property (nonatomic, strong) OpenScreenAdSkipButton *skipButton;
 @property (nonatomic, strong) UIImageView *bgImageView;
@@ -26,6 +27,9 @@
 @property (nonatomic, strong) OpenScreenAdManager *dataManager;
 
 @property (nonatomic, strong) OpenScreenAdMVAdView *mvAdView;
+@property (nonatomic, strong) GADNativeExpressAdView *mobAdView;
+
+@property (nonatomic, strong) NSString *mobADdUnitId;
 
 @end
 
@@ -67,6 +71,22 @@
     [self.dataManager configureWithUnitId:unitId];
 }
 
+- (void)configureMobAdWithApplicationID:(NSString *)mobAdAppId {
+    [GADMobileAds configureWithApplicationID:mobAdAppId];
+}
+
+- (void)configureWithAdMobUnitId:(NSString *)mobAdUnitid {
+    _mobADdUnitId = mobAdUnitid;
+}
+
+- (void)startLoadAd {
+    GADRequest *request = [GADRequest request];
+    [self.mobAdView loadRequest:request];
+    
+    [self.dataManager startLoadAd];
+}
+
+
 #pragma mark - Private
 - (void)configureView {
     self.view.backgroundColor = [UIColor whiteColor];
@@ -91,6 +111,9 @@
         make.left.equalTo(self).offset(OSA_SCREENAPPLYSPACE(23));
         make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(17));
     }];
+    
+    [self.view addSubview:self.mobAdView];
+    
 }
 
 - (void)executeDismiss {
@@ -103,10 +126,6 @@
             [weakSelf.delegate openScreenAdDidClickSkipAndDidDismiss];
         }
     }];
-}
-
-- (void)startLoadAd {
-    [self.dataManager startLoadAd];
 }
 
 
@@ -143,6 +162,16 @@
     
     
     [self.dataManager registerViewForInteraction:self.mvAdView withCampaign:[self.dataManager getMVCampaign]];
+}
+
+
+#pragma mark - GADNativeExpressAdViewDelegate
+- (void)nativeExpressAdViewDidReceiveAd:(GADNativeExpressAdView *)nativeExpressAdView {
+    self.mobAdView.hidden = NO;
+}
+
+- (void)nativeExpressAdView:(GADNativeExpressAdView *)nativeExpressAdView didFailToReceiveAdWithError:(GADRequestError *)error {
+    
 }
 
 
@@ -206,7 +235,7 @@
 
 - (UIView *)emitView {
     if(!_emitView) {
-        _emitView = [[UIView alloc] initWithFrame:CGRectMake(0, OSA_SCREENAPPLYHEIGHT(125), OSA_SCREEN_WIDTH, OSA_SCREENAPPLYHEIGHT(225))];
+        _emitView = [[UIView alloc] initWithFrame:CGRectMake(0, OSA_SCREENAPPLYHEIGHT(125), OSA_SCREEN_WIDTH, OSA_SCREEN_WIDTH)];
     }
     return _emitView;
 }
@@ -225,6 +254,24 @@
     }
     
     return _indicator;
+}
+
+- (GADNativeExpressAdView *)mobAdView {
+    if (!_mobAdView) {
+        _mobAdView = [[GADNativeExpressAdView alloc] initWithFrame:CGRectMake(OSA_SCREENAPPLYHEIGHT(37.5), OSA_SCREENAPPLYHEIGHT(162.5), OSA_SCREENAPPLYHEIGHT(300), OSA_SCREENAPPLYHEIGHT(300))];
+        _mobAdView.adUnitID = _mobADdUnitId;
+        _mobAdView.delegate = self;
+        _mobAdView.rootViewController = self;
+        
+        GADVideoOptions *videoOptions = [[GADVideoOptions alloc] init];
+        videoOptions.startMuted = true;
+        [_mobAdView setAdOptions:@[ videoOptions ]];
+        
+        _mobAdView.videoController.delegate = self;
+        
+        _mobAdView.hidden = NO;
+    }
+    return _mobAdView;
 }
 
 @end

@@ -50,6 +50,7 @@
     [self.mvUnit registerViewForInteraction:view withCampaign:campaign];
 }
 
+
 #pragma mark - OpenScreenMobVistaUnitDelegate
 - (void)openScreenMobvistaUnitDidGetAd {
     if(self.delegate && [self.delegate respondsToSelector:@selector(openScreenMVAdDidReach)]) {

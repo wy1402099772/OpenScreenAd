@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93260E2F1EA1C04E006EBB7C /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93260E2D1EA1C04E006EBB7C /* GoogleMobileAds.framework */; };
+		93260E301EA1C04E006EBB7C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93260E2E1EA1C04E006EBB7C /* README.txt */; };
 		9371ABD81E9F502C0091CEFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABD71E9F502C0091CEFF /* main.m */; };
 		9371ABDB1E9F502C0091CEFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABDA1E9F502C0091CEFF /* AppDelegate.m */; };
 		9371ABDE1E9F502C0091CEFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABDD1E9F502C0091CEFF /* ViewController.m */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93260E2D1EA1C04E006EBB7C /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		93260E2E1EA1C04E006EBB7C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		9371ABD31E9F502C0091CEFF /* OpenScreenAd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenScreenAd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9371ABD71E9F502C0091CEFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9371ABD91E9F502C0091CEFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 				9371AC801EA0AC320091CEFF /* libsqlite3.tbd in Frameworks */,
 				9371AC7D1EA0AC110091CEFF /* MVSDKReward.framework in Frameworks */,
 				9371AC7C1EA0AC110091CEFF /* MVSDKAppWall.framework in Frameworks */,
+				93260E2F1EA1C04E006EBB7C /* GoogleMobileAds.framework in Frameworks */,
 				9371AC7B1EA0AC110091CEFF /* MVSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +150,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93260E2C1EA1C04E006EBB7C /* GoogleMobileAdsSdkiOS */ = {
+			isa = PBXGroup;
+			children = (
+				93260E2D1EA1C04E006EBB7C /* GoogleMobileAds.framework */,
+				93260E2E1EA1C04E006EBB7C /* README.txt */,
+			);
+			path = GoogleMobileAdsSdkiOS;
+			sourceTree = "<group>";
+		};
 		9371ABCA1E9F502C0091CEFF = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +179,7 @@
 		9371ABD51E9F502C0091CEFF /* OpenScreenAd */ = {
 			isa = PBXGroup;
 			children = (
+				93260E2C1EA1C04E006EBB7C /* GoogleMobileAdsSdkiOS */,
 				9371AC971EA0C0C80091CEFF /* Masonry */,
 				9371AC771EA0AC110091CEFF /* Mobvista_GetZ */,
 				9371ABED1E9F51240091CEFF /* OpenScreenAd */,
@@ -355,6 +370,7 @@
 				9371ABE61E9F502C0091CEFF /* LaunchScreen.storyboard in Resources */,
 				9371ABE31E9F502C0091CEFF /* Assets.xcassets in Resources */,
 				9371ACB21EA0C0C80091CEFF /* Info.plist in Resources */,
+				93260E301EA1C04E006EBB7C /* README.txt in Resources */,
 				9371ABE11E9F502C0091CEFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +527,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenScreenAd/Mobvista_GetZ",
+					"$(PROJECT_DIR)/OpenScreenAd/GoogleMobileAdsSdkiOS",
 				);
 				GCC_PREFIX_HEADER = OpenScreenAd/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/OpenScreenAd/Mobvista_GetZ/";
@@ -534,6 +551,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenScreenAd/Mobvista_GetZ",
+					"$(PROJECT_DIR)/OpenScreenAd/GoogleMobileAdsSdkiOS",
 				);
 				GCC_PREFIX_HEADER = OpenScreenAd/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/OpenScreenAd/Mobvista_GetZ/";
