@@ -60,7 +60,7 @@
 - (UILabel *)goLabel {
     if(!_goLabel) {
         _goLabel = [[UILabel alloc] initWithFrame:CGRectMake(OSA_SCREENAPPLYSPACE(20), OSA_SCREENAPPLYHEIGHT(17), OSA_SCREENAPPLYHEIGHT(125), OSA_SCREENAPPLYHEIGHT(25))];
-        _goLabel.text = @"Get it now";
+        _goLabel.text = @"Play Now";
         _goLabel.textAlignment = NSTextAlignmentLeft;
         _goLabel.font = [UIFont systemFontOfSize:18];
         _goLabel.textColor = [UIColor whiteColor];

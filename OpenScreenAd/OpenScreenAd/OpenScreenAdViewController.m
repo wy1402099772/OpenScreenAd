@@ -139,7 +139,7 @@
     if(self.delegate && [self.delegate respondsToSelector:@selector(openScreenAdDidClickSkipAndWillDismiss)]) {
         [self.delegate openScreenAdDidClickSkipAndWillDismiss];
     }
-    __weak typeof(self) weakSelf;
+    __weak typeof(self) weakSelf = self;
     [self dismissViewControllerAnimated:NO completion:^{
         if(weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(openScreenAdDidClickSkipAndDidDismiss)]) {
             [weakSelf.delegate openScreenAdDidClickSkipAndDidDismiss];
