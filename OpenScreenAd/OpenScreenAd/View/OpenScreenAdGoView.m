@@ -50,8 +50,8 @@
     [self.arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.goLabel);
         make.right.equalTo(self).offset(- OSA_SCREENAPPLYSPACE(20));
-        make.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(16));
-        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(16));
+        make.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(20));
+        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(20));
     }];
 }
 
@@ -62,7 +62,7 @@
         _goLabel = [[UILabel alloc] initWithFrame:CGRectMake(OSA_SCREENAPPLYSPACE(20), OSA_SCREENAPPLYHEIGHT(17), OSA_SCREENAPPLYHEIGHT(125), OSA_SCREENAPPLYHEIGHT(25))];
         _goLabel.text = @"Play Now";
         _goLabel.textAlignment = NSTextAlignmentLeft;
-        _goLabel.font = [UIFont systemFontOfSize:18];
+        _goLabel.font = [OpenScreenAdParameters getFontHeavy:OSA_SCREENAPPLYHEIGHT(18)];
         _goLabel.textColor = [UIColor whiteColor];
     }
     return _goLabel;

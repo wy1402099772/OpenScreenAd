@@ -77,7 +77,7 @@
         self.numberLabel.text = [NSString stringWithFormat:@"%d %@", self.currentNum, self.units];
         self.numberLabel.center = CGPointMake(self.trueCenter.x, self.trueCenter.y+20);
         self.numberLabel.textAlignment = NSTextAlignmentCenter;
-        self.numberLabel.font = [UIFont systemFontOfSize:14];
+        self.numberLabel.font = [OpenScreenAdParameters getFontRegular:OSA_SCREENAPPLYHEIGHT(14)];
         self.numberLabel.textColor = [UIColor whiteColor];
 //        [self addSubview:self.numberLabel];
         

@@ -46,10 +46,10 @@
 		9371ACBB1EA0C0C80091CEFF /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACAE1EA0C0C80091CEFF /* View+MASAdditions.m */; };
 		9371ACBC1EA0C0C80091CEFF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACB11EA0C0C80091CEFF /* ViewController+MASAdditions.m */; };
 		9371ACBF1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */; };
-		9371ACC11EA0D94E0091CEFF /* OpenScreenAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9371ACC01EA0D94E0091CEFF /* OpenScreenAd.bundle */; };
 		9371AD041EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */; };
 		9371AD071EA0FA6E0091CEFF /* OpenScreenAdGoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AD061EA0FA6E0091CEFF /* OpenScreenAdGoView.m */; };
 		93D184671EA4C22A009DD2B3 /* OpenScreenAdFlashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D184661EA4C22A009DD2B3 /* OpenScreenAdFlashView.m */; };
+		93D1848E1EA5BC8B009DD2B3 /* LaunchAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93D1848D1EA5BC8B009DD2B3 /* LaunchAd.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,13 +119,13 @@
 		9371ACB11EA0C0C80091CEFF /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		9371ACBD1EA0C3D20091CEFF /* OpenScreenAdMVAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdMVAdView.h; sourceTree = "<group>"; };
 		9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdMVAdView.m; sourceTree = "<group>"; };
-		9371ACC01EA0D94E0091CEFF /* OpenScreenAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = OpenScreenAd.bundle; sourceTree = "<group>"; };
 		9371AD021EA0F5240091CEFF /* OpenScreenAdEmitterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdEmitterLayer.h; sourceTree = "<group>"; };
 		9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdEmitterLayer.m; sourceTree = "<group>"; };
 		9371AD051EA0FA6E0091CEFF /* OpenScreenAdGoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdGoView.h; sourceTree = "<group>"; };
 		9371AD061EA0FA6E0091CEFF /* OpenScreenAdGoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdGoView.m; sourceTree = "<group>"; };
 		93D184651EA4C22A009DD2B3 /* OpenScreenAdFlashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdFlashView.h; sourceTree = "<group>"; };
 		93D184661EA4C22A009DD2B3 /* OpenScreenAdFlashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdFlashView.m; sourceTree = "<group>"; };
+		93D1848D1EA5BC8B009DD2B3 /* LaunchAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LaunchAd.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +211,7 @@
 		9371ABED1E9F51240091CEFF /* OpenScreenAd */ = {
 			isa = PBXGroup;
 			children = (
-				9371ACC01EA0D94E0091CEFF /* OpenScreenAd.bundle */,
+				93D1848D1EA5BC8B009DD2B3 /* LaunchAd.bundle */,
 				9371AC0D1EA074740091CEFF /* AdData */,
 				9371ABF11E9F51990091CEFF /* View */,
 				9371ABEE1E9F51350091CEFF /* OpenScreenAdViewController.h */,
@@ -371,12 +371,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9371ACC11EA0D94E0091CEFF /* OpenScreenAd.bundle in Resources */,
 				9371ABE61E9F502C0091CEFF /* LaunchScreen.storyboard in Resources */,
 				9371ABE31E9F502C0091CEFF /* Assets.xcassets in Resources */,
 				9371ACB21EA0C0C80091CEFF /* Info.plist in Resources */,
 				93260E301EA1C04E006EBB7C /* README.txt in Resources */,
 				9371ABE11E9F502C0091CEFF /* Main.storyboard in Resources */,
+				93D1848E1EA5BC8B009DD2B3 /* LaunchAd.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

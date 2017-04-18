@@ -132,7 +132,7 @@
         _actionButton.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         _actionButton.layer.cornerRadius = (kOSASkipButtonSize - 2 * kOSASkipCircleWidth) / 2.0;
         _actionButton.layer.masksToBounds = YES;
-        _actionButton.titleLabel.font = [UIFont systemFontOfSize:12];
+        _actionButton.titleLabel.font = [OpenScreenAdParameters getFontRegular:OSA_SCREENAPPLYHEIGHT(12)];
     }
     return _actionButton;
 }

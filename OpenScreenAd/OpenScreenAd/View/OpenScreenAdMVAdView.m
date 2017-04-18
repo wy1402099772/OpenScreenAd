@@ -44,15 +44,15 @@
     [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(OSA_SCREENAPPLYHEIGHT(155));
         make.centerX.equalTo(self);
-        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(170));
+        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(190));
         make.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(300));
     }];
     
     [self addSubview:self.bannerImageView];
     [self.bannerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.bannerView);
-        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(143));
-        make.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(282));
+        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(166));
+        make.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(296));
     }];
     
     [self addSubview:self.adLabel];
@@ -75,7 +75,7 @@
         make.top.equalTo(self.avatarImageView.mas_bottom).offset(OSA_SCREENAPPLYHEIGHT(16));
         make.centerX.equalTo(self);
         make.left.equalTo(self).offset(OSA_SCREENAPPLYSPACE(23));
-        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(21));
+        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(27));
     }];
     
     [self addSubview:self.displayAppDesclabel];
@@ -124,7 +124,7 @@
                 _avatarImageView.image = image;
             });
         }];
-        _avatarImageView.layer.cornerRadius = OSA_SCREENAPPLYHEIGHT(3);
+        _avatarImageView.layer.cornerRadius = OSA_SCREENAPPLYHEIGHT(12);
         _avatarImageView.layer.masksToBounds = YES;
     }
     return _avatarImageView;
@@ -133,7 +133,7 @@
 - (UILabel *)displayAppNameLabel {
     if(!_displayAppNameLabel) {
         _displayAppNameLabel = [[UILabel alloc] init];
-        _displayAppNameLabel.font = [UIFont systemFontOfSize:OSA_SCREENAPPLYHEIGHT(18)];
+        _displayAppNameLabel.font = [OpenScreenAdParameters getFontHeavy:OSA_SCREENAPPLYHEIGHT(22)];
         _displayAppNameLabel.textColor = [UIColor whiteColor];
         _displayAppNameLabel.text = self.campaign.appName;
         _displayAppNameLabel.textAlignment = NSTextAlignmentCenter;
@@ -144,7 +144,7 @@
 - (UILabel *)displayAppDesclabel {
     if(!_displayAppDesclabel) {
         _displayAppDesclabel = [[UILabel alloc] init];
-        _displayAppDesclabel.font = [UIFont systemFontOfSize:OSA_SCREENAPPLYHEIGHT(14)];
+        _displayAppDesclabel.font = [OpenScreenAdParameters getFontRegular:OSA_SCREENAPPLYHEIGHT(14)];
         _displayAppDesclabel.textColor = [UIColor whiteColor];
         _displayAppDesclabel.text = self.campaign.appDesc;
         _displayAppDesclabel.numberOfLines = 2;
@@ -156,7 +156,7 @@
 - (UILabel *)adLabel {
     if(!_adLabel) {
         _adLabel = [[UILabel alloc] init];
-        _adLabel.font = [UIFont systemFontOfSize:OSA_SCREENAPPLYHEIGHT(12)];
+        _adLabel.font = [OpenScreenAdParameters getFontRegular:OSA_SCREENAPPLYHEIGHT(12)];
         _adLabel.textColor = [UIColor whiteColor];
         _adLabel.text = @"Sponsored";
         _adLabel.alpha = 0.4;

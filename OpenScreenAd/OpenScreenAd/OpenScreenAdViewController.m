@@ -16,6 +16,8 @@
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import "OpenScreenAdFlashView.h"
 
+static BOOL kOSAPresenting = YES;
+
 @interface OpenScreenAdViewController () <OpenScreenAdSkipButtonDelegate, OpenScreenAdManagerDelegate, GADNativeExpressAdViewDelegate, GADVideoControllerDelegate>
 
 @property (nonatomic, strong) OpenScreenAdSkipButton *skipButton;
@@ -40,7 +42,7 @@
 
 - (instancetype)init {
     if(self = [super init]) {
-        
+        kOSAPresenting = YES;
     }
     return self;
 }
@@ -103,6 +105,10 @@
     [self performSelector:@selector(prepareToLoadMobVista) withObject:nil afterDelay:self.waitSecond];
 }
 
++ (BOOL)isCurrentVCPresenting {
+    return kOSAPresenting;
+}
+
 
 #pragma mark - Private
 - (void)configureView {
@@ -123,8 +129,8 @@
     [self.view addSubview:self.tipLabel];
     [self.tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.indicator.mas_bottom).offset(OSA_SCREENAPPLYHEIGHT(11));
-        make.centerX.equalTo(self);
-        make.left.equalTo(self).offset(OSA_SCREENAPPLYSPACE(23));
+        make.centerX.equalTo(self.view);
+        make.left.equalTo(self.view).offset(OSA_SCREENAPPLYSPACE(23));
         make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(17));
     }];
     
@@ -141,10 +147,12 @@
     }
     __weak typeof(self) weakSelf = self;
     [self dismissViewControllerAnimated:NO completion:^{
+        kOSAPresenting = NO;
         if(weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(openScreenAdDidClickSkipAndDidDismiss)]) {
             [weakSelf.delegate openScreenAdDidClickSkipAndDidDismiss];
         }
     }];
+    
 }
 
 - (void)addMVAdToView {
@@ -261,7 +269,7 @@
         _tipLabel = [[UILabel alloc] init];
         _tipLabel.text = @"Loading...";
         _tipLabel.textAlignment = NSTextAlignmentCenter;
-        _tipLabel.font = [UIFont systemFontOfSize:12];
+        _tipLabel.font = [OpenScreenAdParameters getFontRegular:OSA_SCREENAPPLYHEIGHT(12)];
         _tipLabel.textColor = [UIColor whiteColor];
     }
     return _tipLabel;
@@ -284,7 +292,7 @@
 
 - (UIView *)emitView {
     if(!_emitView) {
-        _emitView = [[UIView alloc] initWithFrame:CGRectMake(0, OSA_SCREENAPPLYHEIGHT(125), OSA_SCREEN_WIDTH, OSA_SCREEN_WIDTH)];
+        _emitView = [[UIView alloc] initWithFrame:CGRectMake(0, OSA_SCREENAPPLYHEIGHT(25), OSA_SCREEN_WIDTH, OSA_SCREEN_WIDTH)];
     }
     return _emitView;
 }

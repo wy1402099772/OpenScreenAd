@@ -42,4 +42,6 @@ typedef NS_ENUM(NSUInteger, OpenScreenAdViewCurrentAdType) {
 
 - (void)startLoadAd;
 
++ (BOOL)isCurrentVCPresenting;
+
 @end
