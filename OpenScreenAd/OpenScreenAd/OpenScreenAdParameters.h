@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define OSA_SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define OSA_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
