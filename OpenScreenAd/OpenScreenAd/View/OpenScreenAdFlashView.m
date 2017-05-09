@@ -1,71 +1,42 @@
 //
-//  OpenScreenAdGoView.m
-//  OpenScreenAd
+//  OpenScreenAdFlashView.m
+//  GetX
 //
-//  Created by wyan assert on 2017/4/14.
-//  Copyright © 2017年 wyan assert. All rights reserved.
+//  Created by wyan assert on 2017/4/17.
+//  Copyright © 2017年 JellyKit Inc. All rights reserved.
 //
 
-#import "OpenScreenAdGoView.h"
-#import "OpenScreenAdParameters.h"
-#import "Masonry.h"
+#import "OpenScreenAdFlashView.h"
 
-@interface OpenScreenAdGoView ()
+@interface OpenScreenAdFlashView ()
 
-@property (nonatomic, strong) UILabel *goLabel;
-@property (nonatomic, strong) UIImageView *arrowImageView;
 @property (nonatomic, strong) CAGradientLayer *flashLayer;
 
 @end
 
-@implementation OpenScreenAdGoView
+@implementation OpenScreenAdFlashView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    if(self = [super initWithFrame:frame]) {
-        [self configureView];
-    }
-    return self;
-}
-
-
-#pragma mark - public
-- (void)startFlashAnimation {
+- (void)startFlash {
     if ([self.flashLayer superlayer] == nil) {
         [self.layer addSublayer:self.flashLayer];
     }
 }
 
-- (void)endFlashAnimation {
-    [self.flashLayer removeFromSuperlayer];
-    self.flashLayer = nil;
-}
-
-
-#pragma mark - Private
-- (void)configureView {
-    self.backgroundColor = [UIColor blackColor];
-    self.alpha = 0.5;
-    [self addSubview:self.goLabel];
-    [self addSubview:self.arrowImageView];
-    [self.arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.goLabel);
-        make.right.equalTo(self).offset(- OSA_SCREENAPPLYSPACE(20));
-        make.width.mas_equalTo(OSA_SCREENAPPLYHEIGHT(20));
-        make.height.mas_equalTo(OSA_SCREENAPPLYHEIGHT(20));
-    }];
-}
-
-
-#pragma mark - Getter
-- (UILabel *)goLabel {
-    if(!_goLabel) {
-        _goLabel = [[UILabel alloc] initWithFrame:CGRectMake(OSA_SCREENAPPLYSPACE(20), OSA_SCREENAPPLYHEIGHT(17), OSA_SCREENAPPLYHEIGHT(125), OSA_SCREENAPPLYHEIGHT(25))];
-        _goLabel.text = @"Play Now";
-        _goLabel.textAlignment = NSTextAlignmentLeft;
-        _goLabel.font = [OpenScreenAdParameters getFontHeavy:OSA_SCREENAPPLYHEIGHT(18)];
-        _goLabel.textColor = [UIColor whiteColor];
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (!self.isUserInteractionEnabled || self.isHidden || self.alpha <= 0.01) {
+        return nil;
     }
-    return _goLabel;
+    if ([self pointInside:point withEvent:event]) {
+        for (UIView *subview in [self.subviews reverseObjectEnumerator]) {
+            CGPoint convertedPoint = [subview convertPoint:point fromView:self];
+            UIView *hitTestView = [subview hitTest:convertedPoint withEvent:event];
+            if (hitTestView) {
+                return hitTestView;
+            }
+        }
+        return nil;
+    }
+    return nil;
 }
 
 - (CAGradientLayer *)flashLayer {
@@ -89,7 +60,7 @@
         keyAnima_group2.keyTimes = timeArray;
         //组合两个动画
         CAAnimationGroup * grounpAnimation = [CAAnimationGroup animation];
-//        grounpAnimation.animations = @[keyAnima_group1, keyAnima_group2];
+        //        grounpAnimation.animations = @[keyAnima_group1, keyAnima_group2];
         grounpAnimation.animations = @[keyAnima_group2];
         grounpAnimation.duration = 2;
         //        grounpAnimation.fillMode=kCAFillModeForwards;
@@ -101,15 +72,6 @@
         [_flashLayer addAnimation:grounpAnimation forKey:@"grounpAnimation"];
     }
     return _flashLayer;
-}
-
-- (UIImageView *)arrowImageView {
-    if(!_arrowImageView) {
-        _arrowImageView = [[UIImageView alloc] init];
-         UIImage *image = [UIImage imageWithContentsOfFile:[OSA_RESOUCE_BUNDLE pathForResource:@"image_flash_ad_arrow@3x" ofType:@"png"]];
-        _arrowImageView.image = image;
-    }
-    return _arrowImageView;
 }
 
 @end

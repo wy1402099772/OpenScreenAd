@@ -33,7 +33,15 @@
 }
 
 - (void)presentAction {
-    [self presentViewController:[[OpenScreenAdViewController alloc] init] animated:NO completion:nil];
+    OpenScreenAdViewController *adController = [OpenScreenAdViewController getLastAdVC];
+    [self addChildViewController:adController];
+    [adController willMoveToParentViewController:self];
+    [self.view addSubview:adController.view];
+    [adController didMoveToParentViewController:self];
+    
+    [[OpenScreenAdViewController getLastAdVC] reverseShow:^{
+        
+    }];
 }
 
 @end

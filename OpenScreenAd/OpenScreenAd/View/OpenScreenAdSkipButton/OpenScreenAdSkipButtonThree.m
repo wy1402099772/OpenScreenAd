@@ -1,19 +1,21 @@
 //
-//  OpenScreenAdSkipButton.m
-//  OpenScreenAd
+//  OpenScreenAdSkipButtonThree.m
+//  Pods
 //
-//  Created by wyan assert on 2017/4/13.
-//  Copyright © 2017年 wyan assert. All rights reserved.
+//  Created by wyan assert on 2017/4/21.
+//
 //
 
-#import "OpenScreenAdSkipButton.h"
+#import "OpenScreenAdSkipButtonThree.h"
+#import "Masonry.h"
 #import "OpenScreenAdCircleView.h"
 #import "OpenScreenAdParameters.h"
+#import "OpenScreenAdSkipButtonDelegate.h"
+#import "OpenScreenAdSkipButtonProtocol.h"
 
-@interface OpenScreenAdSkipButton ()
+@interface OpenScreenAdSkipButtonThree ()
 
-@property (nonatomic, strong) UIButton *actionButton;
-@property (nonatomic, strong) OpenScreenAdCircleView *circleView;
+@property (nonatomic, strong) UILabel *actionButton;
 
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, assign) NSTimeInterval logInterval;
@@ -21,10 +23,12 @@
 
 @end
 
-@implementation OpenScreenAdSkipButton
+@implementation OpenScreenAdSkipButtonThree
 
 @synthesize allowSkipSecond = _allowSkipSecond;
 @synthesize totalSecond = _totalSecond;
+@synthesize delaySecond = _delaySecond;
+@synthesize delegate = _delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if(self = [super initWithFrame:frame]) {
@@ -33,18 +37,46 @@
     return self;
 }
 
-
-#pragma mark - Public
-- (void)startCountdown {
-    [self invalidateTimer];
-    [self startTaskConfig];
+- (instancetype)init {
+    if(self = [super init]) {
+        [self configureView];
+    }
+    return self;
 }
 
 
+#pragma mark - Public
+- (void)startCountdown {
+    [self performSelector:@selector(prepareToCountDown) withObject:nil afterDelay:self.delaySecond];
+}
+
+- (void)forceToCountDown {
+    [[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(prepareToCountDown) object:nil];
+    if(self.timer) {
+        return ;
+    }
+    [self prepareToCountDown];
+}
+
+- (NSUInteger)getRunSecond {
+    return [[NSDate date] timeIntervalSince1970] - self.logInterval;
+}
+
 #pragma mark - Private
 - (void)configureView {
-    [self addSubview:self.circleView];
+    self.hidden = YES;
+    
     [self addSubview:self.actionButton];
+    [self.actionButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
+}
+
+- (void)prepareToCountDown {
+    self.hidden = NO;
+    
+    [self invalidateTimer];
+    [self startTaskConfig];
 }
 
 - (void)startTaskConfig {
@@ -65,7 +97,7 @@
 
 - (void)didTrigleCanSkip {
     self.isSkipEnabled = YES;
-    [self.actionButton setTitle:@"SKIP" forState:UIControlStateNormal];
+    //    [self.actionButton setTitle:@"SKIP" forState:UIControlStateNormal];
     if(self.delegate && [self.delegate respondsToSelector:@selector(openScreenSkipButtonSkipEnaled)]) {
         [self.delegate openScreenSkipButtonSkipEnaled];
     }
@@ -80,6 +112,11 @@
 
 #pragma mark - Action
 - (void)skipButtonDidSelectAction:(UIButton *)sender {
+    if(!self.isSkipEnabled) {
+        return ;
+    }
+    [self.actionButton setText:[NSString stringWithFormat:@"Skip"]];
+    [self invalidateTimer];
     if(self.delegate && [self.delegate respondsToSelector:@selector(userDidSelectOpenScreenSkipButton:)]) {
         [self.delegate userDidSelectOpenScreenSkipButton:0];
     }
@@ -93,11 +130,16 @@
     } else if (!self.isSkipEnabled && isCurrentSkipEnabled) {
         [self didTrigleCanSkip];
     }
-    self.circleView.progress = 1 - interval / self.totalSecond;
-    self.actionButton.enabled = self.isSkipEnabled;
     
     if(!self.isSkipEnabled) {
-        [self.actionButton setTitle:[NSString stringWithFormat:@"%lds", (long)(self.totalSecond - (int)interval)] forState:UIControlStateNormal];
+        [self.actionButton setText:[NSString stringWithFormat:@"%lds", (long)(self.totalSecond - (int)interval)]];
+    } else {
+        NSInteger leftInterval = (long)(self.totalSecond - (int)interval);
+        if(leftInterval > 0) {
+            [self.actionButton setText:[NSString stringWithFormat:@"Skip %lds", leftInterval]];
+        } else {
+            [self.actionButton setText:[NSString stringWithFormat:@"Skip"]];
+        }
     }
 }
 
@@ -111,30 +153,29 @@
     _totalSecond = totalSecond;
 }
 
-
-#pragma mark - Getter
-- (UIButton *)actionButton {
-    if(!_actionButton) {
-        _actionButton = [[UIButton alloc] initWithFrame:CGRectMake(kOSASkipCircleWidth, kOSASkipCircleWidth, kOSASkipButtonSize - 2 * kOSASkipCircleWidth, kOSASkipButtonSize - 2 * kOSASkipCircleWidth)];
-        [_actionButton addTarget:self action:@selector(skipButtonDidSelectAction:) forControlEvents:UIControlEventTouchUpInside];
-        _actionButton.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.2];
-        _actionButton.layer.cornerRadius = (kOSASkipButtonSize - 2 * kOSASkipCircleWidth) / 2.0;
-        _actionButton.layer.masksToBounds = YES;
-        _actionButton.titleLabel.font = [UIFont systemFontOfSize:12];
-    }
-    return _actionButton;
+- (void)setDelaySecond:(NSUInteger)delaySecond {
+    _delaySecond = delaySecond;
 }
 
-- (OpenScreenAdCircleView *)circleView {
-    if(!_circleView) {
-        _circleView = [[OpenScreenAdCircleView alloc] initWithFrame:CGRectMake(0, 0, kOSASkipButtonSize, kOSASkipButtonSize)];
-        _circleView.minNum = 0;
-        _circleView.maxNum = 5;
-        _circleView.progress = 1.0f;
-        _circleView.enableCustom = NO;
-        _circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, -1, 1);
+- (void)setDelegate:(id<OpenScreenAdSkipButtonDelegate>)delegate {
+    _delegate = delegate;
+}
+
+#pragma mark - Getter
+- (UILabel *)actionButton {
+    if(!_actionButton) {
+        _actionButton = [[UILabel alloc] init];
+        _actionButton.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(skipButtonDidSelectAction:)];
+        [_actionButton addGestureRecognizer:tapGesture];
+        _actionButton.backgroundColor = OSA_UIColorFromRGBA(0, 0, 0, 0.4);
+        _actionButton.layer.cornerRadius = 5;
+        _actionButton.layer.masksToBounds = YES;
+        _actionButton.font = [OpenScreenAdParameters getFontRegular:16];
+        _actionButton.textAlignment = NSTextAlignmentCenter;
+        _actionButton.textColor = [UIColor whiteColor];
     }
-    return _circleView;
+    return _actionButton;
 }
 
 - (NSUInteger)allowSkipSecond {
@@ -149,6 +190,13 @@
         _totalSecond = kOSATotalSecond;
     }
     return _totalSecond;
+}
+
+- (NSUInteger)delaySecond {
+    if(!_delaySecond) {
+        _delaySecond = kOSADelaySecond;
+    }
+    return _delaySecond;
 }
 
 @end

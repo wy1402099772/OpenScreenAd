@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OpenScreenAdMVAdViewProtocol.h"
 
-@class MVCampaign;
-
-@interface OpenScreenAdMVAdView : UIView
-
-- (instancetype)initWithMVCampaign:(MVCampaign *)campaign;
+@interface OpenScreenAdMVAdView : UIView <OpenScreenAdMVAdViewProtocol>
 
 @end
