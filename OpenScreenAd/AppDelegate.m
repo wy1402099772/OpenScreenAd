@@ -10,7 +10,7 @@
 #import "ViewController.h"
 #import "OpenScreenAdViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <OpenScreenAdViewControllerDelegate>
 
 @end
 
@@ -38,8 +38,17 @@
     adController.waitSecond = 3;
     adController.delaySecond = 1;
     
+    adController.shouldShowDismissAnimation = YES;
+    adController.dismissEndPoint = CGPointMake(150, 125);
+    
+    adController.delegate = self;
+    
     [adController startLoadAd];
-    [controller presentViewController:adController animated:NO completion:nil];
+    
+    [controller addChildViewController:adController];
+    [adController willMoveToParentViewController:controller];
+    [controller.view addSubview:adController.view];
+    [adController didMoveToParentViewController:controller];
     
     return YES;
 }
@@ -71,5 +80,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+#pragma mark - OpenScreenAdViewControllerDelegate
+
+- (BOOL)shouldOpenScreenAdVCDismissWhenCountDownOrSkip {
+    return NO;
+}
+
+- (void)openScreenAdDidCountDownOrSkip:(UIViewController *)adViewController {
+    
+}
+
+- (void)openScreenAdDidClickSkipAndWillDismiss:(UIViewController *)adViewController {
+    
+}
+
+- (void)openScreenAdDidClickSkipAndDidDismiss:(UIViewController *)adViewController {
+    [adViewController.view removeFromSuperview];
+    [adViewController removeFromParentViewController];
+}
 
 @end

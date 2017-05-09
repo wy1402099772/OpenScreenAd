@@ -14,10 +14,22 @@ typedef NS_ENUM(NSUInteger, OpenScreenAdViewCurrentAdType) {
     OpenScreenAdViewCurrentAdTypeMobVista
 };
 
+typedef NSString* OpenScreenAdType; //@"purple", @"blue", @"orange", @"inkblue"
+extern NSString *const OpenScreenAdTypePurple;
+extern NSString *const OpenScreenAdTypeBlue;
+extern NSString *const OpenScreenAdTypeOrange;
+extern NSString *const OpenScreenAdTypeInkBlue;
+
 @protocol OpenScreenAdViewControllerDelegate <NSObject>
 
-- (void)openScreenAdDidClickSkipAndWillDismiss;
-- (void)openScreenAdDidClickSkipAndDidDismiss;
+//determine whether to auto dismiss when countdown reach ending or click skip，
+- (BOOL)shouldOpenScreenAdVCDismissWhenCountDownOrSkip;
+
+//called when countdown reach ending or click skip，
+- (void)openScreenAdDidCountDownOrSkip:(UIViewController *)adViewController;
+
+- (void)openScreenAdDidClickSkipAndWillDismiss:(UIViewController *)adViewController;
+- (void)openScreenAdDidClickSkipAndDidDismiss:(UIViewController *)adViewController;
 
 @end
 
@@ -29,6 +41,14 @@ typedef NS_ENUM(NSUInteger, OpenScreenAdViewCurrentAdType) {
 @property (nonatomic, assign) NSUInteger totalSecond;
 @property (nonatomic, assign) NSUInteger delaySecond;
 @property (nonatomic, assign) NSUInteger waitSecond;
+
+@property (nonatomic, assign) BOOL       shouldShowDismissAnimation;
+@property (nonatomic, assign) CGPoint    dismissEndPoint;
+@property (nonatomic, strong) NSArray<UIColor *> *gradientColors;
+
+@property (nonatomic, assign) BOOL       shouldAutoHideStatusBar;
+
+@property (nonatomic, strong) OpenScreenAdType       openScreenAdType;
 
 @property (nonatomic, assign, readonly) OpenScreenAdViewCurrentAdType currentState;
 
@@ -42,6 +62,10 @@ typedef NS_ENUM(NSUInteger, OpenScreenAdViewCurrentAdType) {
 
 - (void)startLoadAd;
 
-+ (BOOL)isCurrentVCPresenting;
+- (BOOL)isCurrentVCPresenting;
+
+- (void)reverseShow:(void (^)())block;
+
++ (OpenScreenAdViewController *)getLastAdVC;
 
 @end

@@ -7,21 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OpenScreenAdSkipButtonProtocol.h"
 
-@protocol OpenScreenAdSkipButtonDelegate <NSObject>
+@protocol OpenScreenAdSkipButtonDelegate;
 
-- (void)userDidSelectOpenScreenSkipButton:(NSUInteger)countdown;
-
-- (void)openScreenSkipButtonDidCompleteCountdown;
-- (void)openScreenSkipButtonSkipEnaled;
-
-@end
-
-@interface OpenScreenAdSkipButton : UIView
-
-- (void)startCountdown;
-
-- (NSUInteger)getRunSecond;
+@interface OpenScreenAdSkipButton : UIView <OpenScreenAdSkipButtonProtocol>
 
 @property (nonatomic, assign) NSUInteger allowSkipSecond;
 @property (nonatomic, assign) NSUInteger totalSecond;

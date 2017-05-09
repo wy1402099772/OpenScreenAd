@@ -60,4 +60,50 @@
     return fontLight;
 }
 
++ (NSString *)getLaunchImageName {
+    CGSize viewSize = [UIScreen mainScreen].bounds.size;
+    NSString *viewOrientation = @"Portrait";    
+    NSString *launchImage = nil;
+    
+    NSArray* imagesDict = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    for (NSDictionary* dict in imagesDict)
+    {
+        CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
+        
+        if (CGSizeEqualToSize(imageSize, viewSize) && [viewOrientation isEqualToString:dict[@"UILaunchImageOrientation"]])
+        {
+            launchImage = dict[@"UILaunchImageName"];
+        }
+    }
+    return launchImage;
+}
+
++ (CGRect)getAdFrame:(OpenScreenAdType)adType {
+    if ([adType isEqualToString:OpenScreenAdTypePurple]) {
+        return [UIScreen mainScreen].bounds;
+    } else if ([adType isEqualToString:OpenScreenAdTypeBlue]) {
+        return CGRectMake(0, 0, OSA_SCREEN_WIDTH, OSA_SCREENAPPLYHEIGHT(541));
+    } else if ([adType isEqualToString:OpenScreenAdTypeOrange]) {
+        return CGRectMake(0, 0, OSA_SCREEN_WIDTH, OSA_SCREENAPPLYHEIGHT(597));
+    } else if ([adType isEqualToString:OpenScreenAdTypeInkBlue]) {
+        return CGRectMake(0, 0, OSA_SCREEN_WIDTH, OSA_SCREENAPPLYHEIGHT(559));
+    } else {
+        return [UIScreen mainScreen].bounds;
+    }
+}
+
++ (CGRect)getSkipButtonFrame:(OpenScreenAdType)adType {
+    if ([adType isEqualToString:OpenScreenAdTypePurple]) {
+        return CGRectMake(OSA_SCREEN_WIDTH - kOSASkipButtonSize - 25, 25, kOSASkipButtonSize, kOSASkipButtonSize);
+    } else if ([adType isEqualToString:OpenScreenAdTypeBlue]) {
+        return CGRectMake(OSA_SCREEN_WIDTH - 64 - 13, OSA_SCREEN_HEIGHT - 36 - 29, 64, 36);
+    } else if ([adType isEqualToString:OpenScreenAdTypeOrange]) {
+        return CGRectMake(OSA_SCREEN_WIDTH - 54 - 16, 30, 54, 24);
+    } else if ([adType isEqualToString:OpenScreenAdTypeInkBlue]) {
+        return CGRectMake(OSA_SCREEN_WIDTH - 54 - 16, 30, 54, 24);
+    } else {
+        return CGRectMake(OSA_SCREEN_WIDTH - kOSASkipButtonSize - 25, 25, kOSASkipButtonSize, kOSASkipButtonSize);
+    }
+}
+
 @end

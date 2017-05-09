@@ -16,7 +16,6 @@
 		9371ABE31E9F502C0091CEFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9371ABE21E9F502C0091CEFF /* Assets.xcassets */; };
 		9371ABE61E9F502C0091CEFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9371ABE41E9F502C0091CEFF /* LaunchScreen.storyboard */; };
 		9371ABF01E9F51350091CEFF /* OpenScreenAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABEF1E9F51350091CEFF /* OpenScreenAdViewController.m */; };
-		9371ABF41E9F51A60091CEFF /* OpenScreenAdSkipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABF31E9F51A60091CEFF /* OpenScreenAdSkipButton.m */; };
 		9371ABF71E9F57960091CEFF /* OpenScreenAdCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABF61E9F57960091CEFF /* OpenScreenAdCircleView.m */; };
 		9371ABFB1E9F60170091CEFF /* OpenScreenAdParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ABFA1E9F60170091CEFF /* OpenScreenAdParameters.m */; };
 		9371AC101EA074940091CEFF /* OpenScreenAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AC0F1EA074940091CEFF /* OpenScreenAdManager.m */; };
@@ -45,9 +44,19 @@
 		9371ACBA1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACAC1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		9371ACBB1EA0C0C80091CEFF /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACAE1EA0C0C80091CEFF /* View+MASAdditions.m */; };
 		9371ACBC1EA0C0C80091CEFF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACB11EA0C0C80091CEFF /* ViewController+MASAdditions.m */; };
-		9371ACBF1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */; };
 		9371AD041EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */; };
 		9371AD071EA0FA6E0091CEFF /* OpenScreenAdGoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9371AD061EA0FA6E0091CEFF /* OpenScreenAdGoView.m */; };
+		939ADD5C1EC1CA39009EE88C /* OpenScreenAdDismissAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 939ADD5B1EC1CA39009EE88C /* OpenScreenAdDismissAnimationView.m */; };
+		939ADD721EC1CA55009EE88C /* OpenScreenAdMVAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 939ADD5F1EC1CA55009EE88C /* OpenScreenAdMVAdView.m */; };
+		939ADD731EC1CA55009EE88C /* OpenScreenAdMVAdViewOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 939ADD611EC1CA55009EE88C /* OpenScreenAdMVAdViewOne.m */; };
+		939ADD741EC1CA55009EE88C /* OpenScreenAdMVAdViewThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 939ADD641EC1CA55009EE88C /* OpenScreenAdMVAdViewThree.m */; };
+		939ADD751EC1CA55009EE88C /* OpenScreenAdMVAdViewTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 939ADD661EC1CA55009EE88C /* OpenScreenAdMVAdViewTwo.m */; };
+		939ADD761EC1CA55009EE88C /* OpenScreenAdSkipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 939ADD691EC1CA55009EE88C /* OpenScreenAdSkipButton.m */; };
+		939ADD771EC1CA55009EE88C /* OpenScreenAdSkipButtonOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 939ADD6C1EC1CA55009EE88C /* OpenScreenAdSkipButtonOne.m */; };
+		939ADD781EC1CA55009EE88C /* OpenScreenAdSkipButtonThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 939ADD6F1EC1CA55009EE88C /* OpenScreenAdSkipButtonThree.m */; };
+		939ADD791EC1CA55009EE88C /* OpenScreenAdSkipButtonTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 939ADD711EC1CA55009EE88C /* OpenScreenAdSkipButtonTwo.m */; };
+		939ADD7F1EC1CA6D009EE88C /* UIImageView+OSA_RenderCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 939ADD7C1EC1CA6D009EE88C /* UIImageView+OSA_RenderCornerRadius.m */; };
+		939ADD801EC1CA6D009EE88C /* OpenScreenAdHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 939ADD7E1EC1CA6D009EE88C /* OpenScreenAdHelper.m */; };
 		93D184671EA4C22A009DD2B3 /* OpenScreenAdFlashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D184661EA4C22A009DD2B3 /* OpenScreenAdFlashView.m */; };
 		93D1848E1EA5BC8B009DD2B3 /* LaunchAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93D1848D1EA5BC8B009DD2B3 /* LaunchAd.bundle */; };
 /* End PBXBuildFile section */
@@ -67,8 +76,6 @@
 		9371ABE71E9F502C0091CEFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9371ABEE1E9F51350091CEFF /* OpenScreenAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdViewController.h; sourceTree = "<group>"; };
 		9371ABEF1E9F51350091CEFF /* OpenScreenAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdViewController.m; sourceTree = "<group>"; };
-		9371ABF21E9F51A60091CEFF /* OpenScreenAdSkipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdSkipButton.h; sourceTree = "<group>"; };
-		9371ABF31E9F51A60091CEFF /* OpenScreenAdSkipButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdSkipButton.m; sourceTree = "<group>"; };
 		9371ABF51E9F57960091CEFF /* OpenScreenAdCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdCircleView.h; sourceTree = "<group>"; };
 		9371ABF61E9F57960091CEFF /* OpenScreenAdCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdCircleView.m; sourceTree = "<group>"; };
 		9371ABF91E9F60170091CEFF /* OpenScreenAdParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdParameters.h; sourceTree = "<group>"; };
@@ -117,12 +124,35 @@
 		9371ACAF1EA0C0C80091CEFF /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		9371ACB01EA0C0C80091CEFF /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		9371ACB11EA0C0C80091CEFF /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		9371ACBD1EA0C3D20091CEFF /* OpenScreenAdMVAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdMVAdView.h; sourceTree = "<group>"; };
-		9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdMVAdView.m; sourceTree = "<group>"; };
 		9371AD021EA0F5240091CEFF /* OpenScreenAdEmitterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdEmitterLayer.h; sourceTree = "<group>"; };
 		9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdEmitterLayer.m; sourceTree = "<group>"; };
 		9371AD051EA0FA6E0091CEFF /* OpenScreenAdGoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdGoView.h; sourceTree = "<group>"; };
 		9371AD061EA0FA6E0091CEFF /* OpenScreenAdGoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdGoView.m; sourceTree = "<group>"; };
+		939ADD5A1EC1CA39009EE88C /* OpenScreenAdDismissAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdDismissAnimationView.h; sourceTree = "<group>"; };
+		939ADD5B1EC1CA39009EE88C /* OpenScreenAdDismissAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdDismissAnimationView.m; sourceTree = "<group>"; };
+		939ADD5E1EC1CA55009EE88C /* OpenScreenAdMVAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdMVAdView.h; sourceTree = "<group>"; };
+		939ADD5F1EC1CA55009EE88C /* OpenScreenAdMVAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdMVAdView.m; sourceTree = "<group>"; };
+		939ADD601EC1CA55009EE88C /* OpenScreenAdMVAdViewOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdMVAdViewOne.h; sourceTree = "<group>"; };
+		939ADD611EC1CA55009EE88C /* OpenScreenAdMVAdViewOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdMVAdViewOne.m; sourceTree = "<group>"; };
+		939ADD621EC1CA55009EE88C /* OpenScreenAdMVAdViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdMVAdViewProtocol.h; sourceTree = "<group>"; };
+		939ADD631EC1CA55009EE88C /* OpenScreenAdMVAdViewThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdMVAdViewThree.h; sourceTree = "<group>"; };
+		939ADD641EC1CA55009EE88C /* OpenScreenAdMVAdViewThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdMVAdViewThree.m; sourceTree = "<group>"; };
+		939ADD651EC1CA55009EE88C /* OpenScreenAdMVAdViewTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdMVAdViewTwo.h; sourceTree = "<group>"; };
+		939ADD661EC1CA55009EE88C /* OpenScreenAdMVAdViewTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdMVAdViewTwo.m; sourceTree = "<group>"; };
+		939ADD681EC1CA55009EE88C /* OpenScreenAdSkipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdSkipButton.h; sourceTree = "<group>"; };
+		939ADD691EC1CA55009EE88C /* OpenScreenAdSkipButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdSkipButton.m; sourceTree = "<group>"; };
+		939ADD6A1EC1CA55009EE88C /* OpenScreenAdSkipButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdSkipButtonDelegate.h; sourceTree = "<group>"; };
+		939ADD6B1EC1CA55009EE88C /* OpenScreenAdSkipButtonOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdSkipButtonOne.h; sourceTree = "<group>"; };
+		939ADD6C1EC1CA55009EE88C /* OpenScreenAdSkipButtonOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdSkipButtonOne.m; sourceTree = "<group>"; };
+		939ADD6D1EC1CA55009EE88C /* OpenScreenAdSkipButtonProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdSkipButtonProtocol.h; sourceTree = "<group>"; };
+		939ADD6E1EC1CA55009EE88C /* OpenScreenAdSkipButtonThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdSkipButtonThree.h; sourceTree = "<group>"; };
+		939ADD6F1EC1CA55009EE88C /* OpenScreenAdSkipButtonThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdSkipButtonThree.m; sourceTree = "<group>"; };
+		939ADD701EC1CA55009EE88C /* OpenScreenAdSkipButtonTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdSkipButtonTwo.h; sourceTree = "<group>"; };
+		939ADD711EC1CA55009EE88C /* OpenScreenAdSkipButtonTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdSkipButtonTwo.m; sourceTree = "<group>"; };
+		939ADD7B1EC1CA6D009EE88C /* UIImageView+OSA_RenderCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+OSA_RenderCornerRadius.h"; sourceTree = "<group>"; };
+		939ADD7C1EC1CA6D009EE88C /* UIImageView+OSA_RenderCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+OSA_RenderCornerRadius.m"; sourceTree = "<group>"; };
+		939ADD7D1EC1CA6D009EE88C /* OpenScreenAdHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdHelper.h; sourceTree = "<group>"; };
+		939ADD7E1EC1CA6D009EE88C /* OpenScreenAdHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdHelper.m; sourceTree = "<group>"; };
 		93D184651EA4C22A009DD2B3 /* OpenScreenAdFlashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScreenAdFlashView.h; sourceTree = "<group>"; };
 		93D184661EA4C22A009DD2B3 /* OpenScreenAdFlashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScreenAdFlashView.m; sourceTree = "<group>"; };
 		93D1848D1EA5BC8B009DD2B3 /* LaunchAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LaunchAd.bundle; sourceTree = "<group>"; };
@@ -211,6 +241,9 @@
 		9371ABED1E9F51240091CEFF /* OpenScreenAd */ = {
 			isa = PBXGroup;
 			children = (
+				939ADD7A1EC1CA6D009EE88C /* Utils */,
+				939ADD7D1EC1CA6D009EE88C /* OpenScreenAdHelper.h */,
+				939ADD7E1EC1CA6D009EE88C /* OpenScreenAdHelper.m */,
 				93D1848D1EA5BC8B009DD2B3 /* LaunchAd.bundle */,
 				9371AC0D1EA074740091CEFF /* AdData */,
 				9371ABF11E9F51990091CEFF /* View */,
@@ -225,14 +258,14 @@
 		9371ABF11E9F51990091CEFF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				939ADD5D1EC1CA55009EE88C /* OpenScreenAdMVAdView */,
+				939ADD671EC1CA55009EE88C /* OpenScreenAdSkipButton */,
+				939ADD5A1EC1CA39009EE88C /* OpenScreenAdDismissAnimationView.h */,
+				939ADD5B1EC1CA39009EE88C /* OpenScreenAdDismissAnimationView.m */,
 				93D184651EA4C22A009DD2B3 /* OpenScreenAdFlashView.h */,
 				93D184661EA4C22A009DD2B3 /* OpenScreenAdFlashView.m */,
 				9371ABF51E9F57960091CEFF /* OpenScreenAdCircleView.h */,
 				9371ABF61E9F57960091CEFF /* OpenScreenAdCircleView.m */,
-				9371ABF21E9F51A60091CEFF /* OpenScreenAdSkipButton.h */,
-				9371ABF31E9F51A60091CEFF /* OpenScreenAdSkipButton.m */,
-				9371ACBD1EA0C3D20091CEFF /* OpenScreenAdMVAdView.h */,
-				9371ACBE1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m */,
 				9371AD021EA0F5240091CEFF /* OpenScreenAdEmitterLayer.h */,
 				9371AD031EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m */,
 				9371AD051EA0FA6E0091CEFF /* OpenScreenAdGoView.h */,
@@ -312,6 +345,48 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		939ADD5D1EC1CA55009EE88C /* OpenScreenAdMVAdView */ = {
+			isa = PBXGroup;
+			children = (
+				939ADD5E1EC1CA55009EE88C /* OpenScreenAdMVAdView.h */,
+				939ADD5F1EC1CA55009EE88C /* OpenScreenAdMVAdView.m */,
+				939ADD601EC1CA55009EE88C /* OpenScreenAdMVAdViewOne.h */,
+				939ADD611EC1CA55009EE88C /* OpenScreenAdMVAdViewOne.m */,
+				939ADD621EC1CA55009EE88C /* OpenScreenAdMVAdViewProtocol.h */,
+				939ADD631EC1CA55009EE88C /* OpenScreenAdMVAdViewThree.h */,
+				939ADD641EC1CA55009EE88C /* OpenScreenAdMVAdViewThree.m */,
+				939ADD651EC1CA55009EE88C /* OpenScreenAdMVAdViewTwo.h */,
+				939ADD661EC1CA55009EE88C /* OpenScreenAdMVAdViewTwo.m */,
+			);
+			path = OpenScreenAdMVAdView;
+			sourceTree = "<group>";
+		};
+		939ADD671EC1CA55009EE88C /* OpenScreenAdSkipButton */ = {
+			isa = PBXGroup;
+			children = (
+				939ADD681EC1CA55009EE88C /* OpenScreenAdSkipButton.h */,
+				939ADD691EC1CA55009EE88C /* OpenScreenAdSkipButton.m */,
+				939ADD6A1EC1CA55009EE88C /* OpenScreenAdSkipButtonDelegate.h */,
+				939ADD6B1EC1CA55009EE88C /* OpenScreenAdSkipButtonOne.h */,
+				939ADD6C1EC1CA55009EE88C /* OpenScreenAdSkipButtonOne.m */,
+				939ADD6D1EC1CA55009EE88C /* OpenScreenAdSkipButtonProtocol.h */,
+				939ADD6E1EC1CA55009EE88C /* OpenScreenAdSkipButtonThree.h */,
+				939ADD6F1EC1CA55009EE88C /* OpenScreenAdSkipButtonThree.m */,
+				939ADD701EC1CA55009EE88C /* OpenScreenAdSkipButtonTwo.h */,
+				939ADD711EC1CA55009EE88C /* OpenScreenAdSkipButtonTwo.m */,
+			);
+			path = OpenScreenAdSkipButton;
+			sourceTree = "<group>";
+		};
+		939ADD7A1EC1CA6D009EE88C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				939ADD7B1EC1CA6D009EE88C /* UIImageView+OSA_RenderCornerRadius.h */,
+				939ADD7C1EC1CA6D009EE88C /* UIImageView+OSA_RenderCornerRadius.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -387,6 +462,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939ADD801EC1CA6D009EE88C /* OpenScreenAdHelper.m in Sources */,
+				939ADD761EC1CA55009EE88C /* OpenScreenAdSkipButton.m in Sources */,
+				939ADD781EC1CA55009EE88C /* OpenScreenAdSkipButtonThree.m in Sources */,
+				939ADD751EC1CA55009EE88C /* OpenScreenAdMVAdViewTwo.m in Sources */,
 				9371ACB81EA0C0C80091CEFF /* MASViewConstraint.m in Sources */,
 				9371AD041EA0F5240091CEFF /* OpenScreenAdEmitterLayer.m in Sources */,
 				9371ABDE1E9F502C0091CEFF /* ViewController.m in Sources */,
@@ -394,21 +473,26 @@
 				9371ABFB1E9F60170091CEFF /* OpenScreenAdParameters.m in Sources */,
 				93D184671EA4C22A009DD2B3 /* OpenScreenAdFlashView.m in Sources */,
 				9371AC101EA074940091CEFF /* OpenScreenAdManager.m in Sources */,
+				939ADD5C1EC1CA39009EE88C /* OpenScreenAdDismissAnimationView.m in Sources */,
 				9371ABF01E9F51350091CEFF /* OpenScreenAdViewController.m in Sources */,
 				9371ACB31EA0C0C80091CEFF /* MASCompositeConstraint.m in Sources */,
-				9371ACBF1EA0C3D20091CEFF /* OpenScreenAdMVAdView.m in Sources */,
 				9371ACB51EA0C0C80091CEFF /* MASConstraintMaker.m in Sources */,
 				9371ACBB1EA0C0C80091CEFF /* View+MASAdditions.m in Sources */,
 				9371ACB61EA0C0C80091CEFF /* MASLayoutConstraint.m in Sources */,
 				9371ACBC1EA0C0C80091CEFF /* ViewController+MASAdditions.m in Sources */,
 				9371ACB41EA0C0C80091CEFF /* MASConstraint.m in Sources */,
-				9371ABF41E9F51A60091CEFF /* OpenScreenAdSkipButton.m in Sources */,
 				9371AD071EA0FA6E0091CEFF /* OpenScreenAdGoView.m in Sources */,
+				939ADD771EC1CA55009EE88C /* OpenScreenAdSkipButtonOne.m in Sources */,
+				939ADD731EC1CA55009EE88C /* OpenScreenAdMVAdViewOne.m in Sources */,
 				9371ABF71E9F57960091CEFF /* OpenScreenAdCircleView.m in Sources */,
+				939ADD7F1EC1CA6D009EE88C /* UIImageView+OSA_RenderCornerRadius.m in Sources */,
 				9371ACB91EA0C0C80091CEFF /* NSArray+MASAdditions.m in Sources */,
 				9371ACBA1EA0C0C80091CEFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				939ADD791EC1CA55009EE88C /* OpenScreenAdSkipButtonTwo.m in Sources */,
 				9371ABDB1E9F502C0091CEFF /* AppDelegate.m in Sources */,
+				939ADD721EC1CA55009EE88C /* OpenScreenAdMVAdView.m in Sources */,
 				9371AC951EA0BB540091CEFF /* OpenScreenMobVistaUnit.m in Sources */,
+				939ADD741EC1CA55009EE88C /* OpenScreenAdMVAdViewThree.m in Sources */,
 				9371ABD81E9F502C0091CEFF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
